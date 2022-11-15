@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Walkers
+  - Blockers
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Walkers
+    uniqueID: 1638336953
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Blockers
+    uniqueID: 2140908111
     locked: 0
