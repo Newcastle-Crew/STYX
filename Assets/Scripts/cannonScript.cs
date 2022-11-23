@@ -6,34 +6,30 @@ using UnityEngine;
 
 public class cannonScript : MonoBehaviour
 {
-
     /// Made with this tutorial: https://youtu.be/SDl5YTis__k
-    /// rotations are all me, baby
+    /// rotations were all me
 
     // TODO: find a way to make it so the player needs to be near the cannon before it shoots
     // bonus: find a way to show a 'countdown' on screen before the cannon shoots
     // bonus: find a way to show the 'cooldown' before the cannon is ready to shoot again
     
-    public Transform firepoint; // The exact area that the cannonball fires from. Middle.
-
-    public Transform cannonRotation; // keeps track of the cannon's 'x' rotation
+    public Transform firepoint; // The exact area that the cannonball fires from. More could be added for upgrades or something.
 
     public GameObject bullet; // The cannonball that fires.
-    public GameObject cannon; // the cannon itself, that can be rotated.
+    public GameObject cannon; // The cannon itself, that can be rotated.
 
     float timeBetween; // the time between shots (probably will be removed)
     public float startTimeBetween; // begins a countdown between shots
 
+    float cannonZ = 0; // The cannon's Z rotation
+    private bool readyToGo; // Checks for player in the right position (inside trigger box).
+
     float timeUntilShoot = 5f; // unused; see first TODO
-
-    float cannonZ = 0; // the cannon's rotation
-
-    private bool readyToGo;
 
     void Start()
     { timeBetween = startTimeBetween; } // will likely be removed, best for automatic fire
 
-    void Rotate() // rotates the cannon
+    void Rotate() // rotates the cannon to left, right, or back to middle
     {
         if(cannonZ + 45 > 45)
             cannonZ = -45;
@@ -45,22 +41,26 @@ public class cannonScript : MonoBehaviour
     
     void Update()
     {
-        if(timeBetween <= 0)
+        if(readyToGo == true && Input.GetKeyDown(KeyCode.E) && timeBetween <= 0)
         {
             Instantiate(bullet,firepoint.position,firepoint.rotation);
             timeBetween = startTimeBetween;
         }
         else
-        { timeBetween -= Time.deltaTime; }
+        { 
+            timeBetween -= Time.deltaTime;
+            // Could add a negative sound effect here to show that it's not ready yet.
+        }
 
         if(readyToGo == true && Input.GetKeyDown(KeyCode.Space))
         { Rotate(); }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
         if(other.tag == "Player")
         {
-            readyToGo = true;
+            readyToGo = true; // Lets the player fire or rotate the cannon when they're in the right spot.
         }
     }
 
@@ -68,7 +68,7 @@ public class cannonScript : MonoBehaviour
     {
     if(other.tag == "Player")
     {
-        readyToGo = false;
-    }
+        readyToGo = false; // Stops rotations / firing after leaving the right spot.
+        }
     }
 }

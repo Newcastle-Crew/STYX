@@ -9,8 +9,9 @@ public class cannonballScript : MonoBehaviour
     public float speed; // how fast the cannonball moves
     public SpriteRenderer ballSprite; // used to make the ball turn invisible after hitting an enemy
 
-    Rigidbody2D rb;
-    int enemyHealth = 2;
+    Rigidbody2D rb; // woah, phsyics!
+
+    int enemyHealth = 2; // couldn't get this working
 
     public bool Blasting; // supposed to signal the Sound Checks script to play sound, doesn't work
 
