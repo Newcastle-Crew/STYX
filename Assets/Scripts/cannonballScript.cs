@@ -11,9 +11,7 @@ public class cannonballScript : MonoBehaviour
 
     Rigidbody2D rb; // woah, phsyics!
 
-    int enemyHealth = 2; // couldn't get this working
-
-    public bool Blasting; // supposed to signal the Sound Checks script to play sound, doesn't work
+    public bool Blasting; // supposed to signal the Sound Checks script to play sound, doesn't work rn
 
     void Start()
     {
@@ -27,7 +25,7 @@ public class cannonballScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<simpleEnemy>() != null)
+        if (collision.gameObject.GetComponent<Enemy>() != null)
         {   
             Destroy(collision.gameObject); // destroys the collisions of the enemy
 
