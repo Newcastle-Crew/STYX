@@ -9,9 +9,8 @@ public class cannonScript : MonoBehaviour
     /// Made with this tutorial: https://youtu.be/SDl5YTis__k
     /// rotations were all me
 
-    // TODO: find a way to make it so the player needs to be near the cannon before it shoots
-    // bonus: find a way to show a 'countdown' on screen before the cannon shoots
-    // bonus: find a way to show the 'cooldown' before the cannon is ready to shoot again
+    // todo: find a way to show a 'countdown' on screen before the cannon shoots
+    // todo: find a way to show the 'cooldown' before the cannon is ready to shoot again
     
     public Transform firepoint; // The exact area that the cannonball fires from. More could be added for upgrades or something.
 
