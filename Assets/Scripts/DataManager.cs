@@ -98,9 +98,7 @@ public class PlayerData
     public PlayerData(int l1o, bool l1c, bool dogN)
     {
         level1Obols = l1o;
-
         level1Complete = l1c;
-
         cerberusUnlocked = dogN;
     }
 }

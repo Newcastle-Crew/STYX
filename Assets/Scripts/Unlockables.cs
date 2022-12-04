@@ -14,15 +14,14 @@ public class Unlockables : MonoBehaviour
         DataManager.Instance.LoadGame();
 
         if(DataManager.Instance.CerberusUnlocked == true)
-        {
-            RemoveCake();
-        }
+        { RemoveCake(); }
     }
 
     public void RemoveCake()
     {
         honeyCake.SetActive(false);
         cerbText.SetActive(true);
+
         DataManager.Instance.CerberusUnlocked = true; // hides the sprite, shows the text
         DataManager.Instance.SaveGame();
     }
