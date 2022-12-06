@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 //using UnityEngine.InputSystem; // Takes and handles input and movement for a player character
 #endregion
 
@@ -18,6 +20,8 @@ public class PlayerMovementTemp : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    public GameObject myUI;
+
     bool canMove = true;
     
     void Start() // Start is called before the first frame update
@@ -25,6 +29,7 @@ public class PlayerMovementTemp : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -115,4 +120,19 @@ public class PlayerMovementTemp : MonoBehaviour
 
     public void UnlockMovement()
     { canMove = true; }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.tag == "Exit")
+        {
+            //SceneManager.LoadScene("GameScene"); // Lets the player fire or rotate the cannon when they're in the right spot.
+            myUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    public void NoMoreMouse()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }
