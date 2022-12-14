@@ -132,7 +132,10 @@ public class PlayerMovementTemp : MonoBehaviour
     }
 
     public void NoMoreMouse()
+    { Cursor.lockState = CursorLockMode.Locked; }
+
+    public void upgradeSpeed()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        moveSpeed += 2.05f;
     }
 }

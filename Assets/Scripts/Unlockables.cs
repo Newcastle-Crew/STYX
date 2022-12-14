@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class Unlockables : MonoBehaviour
 {
-    public GameObject honeyCake; // the honey cake button
-    public GameObject cerbText; // the text that says 'cerberus unlocked!'
+    #region Cerberus
+    public GameObject honeyCake; // honey cake button in the grapevine
+    public GameObject cerbText; // grapevine text that says 'cerberus unlocked!'
 
-    private void Start() 
+    public GameObject cerbButton; // the UI button for summoning Cerberus
+    #endregion
+
+    private void Start()
     {
         DataManager.Instance.LoadGame();
 
@@ -19,10 +23,23 @@ public class Unlockables : MonoBehaviour
 
     public void RemoveCake()
     {
-        honeyCake.SetActive(false);
-        cerbText.SetActive(true);
+        honeyCake.SetActive(false); // hides the cake
+        cerbText.SetActive(true); // shows the unlocked text
+        cerbButton.SetActive(true);
 
         DataManager.Instance.CerberusUnlocked = true; // hides the sprite, shows the text
-        DataManager.Instance.SaveGame();
+        DataManager.Instance.SaveGame(); // saves the game
+    }
+
+    private void Update () 
+    {
+
+        if(cerbButton.activeInHierarchy && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            // todo: text for cerberus attacking
+        }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        { Cursor.lockState = CursorLockMode.None; }
     }
 }
