@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-//using UnityEngine.InputSystem; // Takes and handles input and movement for a player character
+using UnityEngine.InputSystem; // Takes and handles input and movement for a player character
 #endregion
 
 public class PlayerMovementTemp : MonoBehaviour

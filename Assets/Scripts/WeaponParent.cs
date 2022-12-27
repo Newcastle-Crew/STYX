@@ -19,6 +19,9 @@ public class WeaponParent : MonoBehaviour
 
     public bool IsAttacking { get; private set; }
 
+    public Transform circleOrigin; // the centre of the 'circle', where the attack comes from
+    public float attackRadius; // how big the area of the attack is
+
     public void ResetIsAttacking()
     { IsAttacking = false; }    
 
@@ -30,8 +33,9 @@ public class WeaponParent : MonoBehaviour
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
+        if (direction.x < 0) scale.x = -1; if (direction.x > 0) scale.x = 1;
         if (direction.x < 0)
-        { scale.y = -1; } // inverts the weapon's scale when the player is looking 'behind' themselves, making the weapon appear 'behind' them too
+        { scale.y = -1; } // inverts the weapon's scale when the player is looking left, making the weapon appear where it should
         else if (direction.x > 0)
         { scale.y = 1; } // doesn't do this when the weapon is past a certain point, cuz that'd make the weapon appear upside-down
         transform.localScale = scale;
@@ -56,5 +60,25 @@ public class WeaponParent : MonoBehaviour
     {
         yield return new WaitForSeconds(attackDelay);
         attackBlocked = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Vector3 position = circleOrigin == null ? Vector3.zero : circleOrigin.position;
+        Gizmos.DrawWireSphere(position, attackRadius); // draws the area of attack circle
+    }
+
+    public void DetectColliders()
+    {
+        foreach(Collider2D collider in Physics2D.OverlapCircleAll(circleOrigin.position,attackRadius))
+        {
+            //Debug.Log(collider.name);
+            Health health;
+            if(health = collider.GetComponent<Health>())
+            {
+                health.GetHit(1, transform.parent.gameObject);
+            }
+        }
     }
 }
