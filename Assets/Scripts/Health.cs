@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
     {
         if (isDead)
             return;
-        if (sender.layer == gameObject.layer) // stops player from hurting themselves
+        if (sender.layer == gameObject.layer) // stops player from hurting themselves & enemy friendly fire
             return;
 
         currentHealth -= amount;

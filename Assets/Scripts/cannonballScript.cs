@@ -25,7 +25,7 @@ public class cannonballScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() != null)
+        if (collision.gameObject.GetComponent<EnemyAI>() != null)
         {   
             Destroy(collision.gameObject); // destroys the collisions of the enemy
 

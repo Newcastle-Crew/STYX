@@ -6,9 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endregion
 
-// using these tutorials: "HOW TO USE NEW INPUT SYSTEM IN UNITY" https://youtu.be/-c_LYQgG8BY
-// "CREATE MELEE ATTACK / COMBAT IN UNITY P1 - ATTACK ANIMATION" https://youtu.be/7vMHTUwtyNs
-// "HOW TO AIM WEAPON AT MOUSE IN UNITY" https://youtu.be/DPqc7qYDtzM
+// using this tutorial playlist: https://www.youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
 
 public class Agent : MonoBehaviour
 {
@@ -36,7 +34,7 @@ public class Agent : MonoBehaviour
     {
         Vector2 lookDirection = pointerInput - (Vector2)transform.position;
         agentAnimations.RotateToPointer(lookDirection);
-        //agentAnimations.PlayAnimation(movementInput);
+        agentAnimations.PlayAnimation(movementInput);
     }
 
     private void Update()

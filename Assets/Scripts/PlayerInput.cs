@@ -7,9 +7,10 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 #endregion
 
+// using this tutorial playlist: https://www.youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
+
 public class PlayerInput : MonoBehaviour
 {
-
     public UnityEvent<Vector2> OnMovementInput, OnPointerInput;
     public UnityEvent OnAttack;
 

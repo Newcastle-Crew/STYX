@@ -12,7 +12,7 @@ public class PlayerMovementTemp : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
-    public SwordAttack swordAttack;
+    //public SwordAttack swordAttack;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -99,21 +99,21 @@ public class PlayerMovementTemp : MonoBehaviour
     void OnFire()
     { animator.SetTrigger("swordAttack"); }
 
-    public void SwordAttack()
-    {
-        LockMovement();
+    //public void SwordAttack()
+    //{
+    //    LockMovement();
 
-        if (spriteRenderer.flipX == true)
-        { swordAttack.AttackLeft(); }
-        else
-        { swordAttack.AttackRight(); }
-    }
+    //    if (spriteRenderer.flipX == true)
+    //    { swordAttack.AttackLeft(); }
+    //    else
+    //    { swordAttack.AttackRight(); }
+    //}
 
-    public void EndSwordAttack()
-    {
-        UnlockMovement();
-        swordAttack.StopAttack();
-    }
+    //public void EndSwordAttack()
+    //{
+    //    UnlockMovement();
+    //    swordAttack.StopAttack();
+    //}
 
     public void LockMovement()
     { canMove = false; }
