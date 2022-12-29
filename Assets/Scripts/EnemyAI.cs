@@ -10,45 +10,85 @@ public class EnemyAI : MonoBehaviour
     public UnityEvent<Vector2> OnMovementInput, OnPointerInput;
     public UnityEvent OnAttack;
 
-    [SerializeField] private Transform player;
-    [SerializeField] private float chaseDistanceThreshold = 3, attackDistanceThreshold = 0.8f;
+    [SerializeField] private Transform target; // For most enemies, this is the player. For sculptors, this is the trapdoor.
+    [SerializeField] private Transform target2; // For most enemies, this is ignored - for sculptors, this is the player.
 
-    [SerializeField] 
-    private float attackDelay = 1;
-    private float passedTime = 1;
+    [SerializeField] private float chaseDistanceThreshold = 3, attackDistanceThreshold = 0.8f; // how close player can get before being chased / how close enemies get before attempting a hit
+
+    [SerializeField]
+    private float attackDelay = 1; // time between attacks, adjustable
+    private float passedTime = 1; // time since last attack, adjustable
+
+    public bool isSculptor = false;
 
     private void Update()
     {
-        if (player == null) // no point doing anything if player is dead
+        if (isSculptor == false && target == null) // if the player is dead, enemies stop moving
         {
             OnMovementInput?.Invoke(Vector2.zero);
             return;
-        } 
-
-        float distance = Vector2.Distance(player.position, transform.position);
-        if(distance < chaseDistanceThreshold) // if the player is close enough to be chased...
+        }
+        if(isSculptor == true && target2 == null)
         {
-            OnPointerInput?.Invoke(player.position); // look at the player
+            OnMovementInput?.Invoke(Vector2.zero);
+            return;
+        }
 
-            if(distance <= attackDistanceThreshold) // if close enough to hit the player, do it
+        if (target == null) // if first target is destroyed, go after secondary target
+        {
+            float newDistance = Vector2.Distance(target2.position, transform.position);
+
+            if (newDistance < chaseDistanceThreshold) // if the player is close enough to be chased...
             {
-                OnMovementInput?.Invoke(Vector2.zero);
+                OnPointerInput?.Invoke(target2.position); // look at them
 
-                if(passedTime >= attackDelay)
+                if (newDistance <= attackDistanceThreshold) // if close enough to hit, do so
                 {
-                    passedTime = 0; // wait at least 1 second before hitting player
-                    OnAttack?.Invoke();
+                    OnMovementInput?.Invoke(Vector2.zero);
+
+                    if (passedTime >= attackDelay)
+                    {
+                        passedTime = 0; // wait at least 1 second before hitting
+                        OnAttack?.Invoke();
+                    }
+                }
+                else // if not close enough to hit target, chase
+                {
+                    Vector2 direction = target2.position - transform.position;
+                    OnMovementInput?.Invoke(direction.normalized);
                 }
             }
-            else // if not close enough to hit player, chase them
+            if (passedTime < attackDelay) // even while enemy idles, they're getting ready for attack
             {
-                Vector2 direction = player.position - transform.position;
-                OnMovementInput?.Invoke(direction.normalized);
+                passedTime += Time.deltaTime;
             }
         }
-        if(passedTime < attackDelay) // even while enemy idles, they're getting ready for attack
+        
+        if(target != null)
         {
-            passedTime += Time.deltaTime;
+            float distance = Vector2.Distance(target.position, transform.position); // defines the distance between target and enemy
+            if (distance < chaseDistanceThreshold) // if the target is close enough to be chased...
+            {
+                OnPointerInput?.Invoke(target.position); // look at the target
+
+                if (distance <= attackDistanceThreshold) // if close enough to hit, do so
+                {
+                    OnMovementInput?.Invoke(Vector2.zero); // stop moving when close enough to hit
+                    if (passedTime >= attackDelay)
+                    {
+                        passedTime = 0; // wait at least 1 second before hitting
+                        OnAttack?.Invoke(); // hit
+                    }
+                }
+                else // if not close enough to hit target, chase
+                {
+                    Vector2 direction = target.position - transform.position;
+                    OnMovementInput?.Invoke(direction.normalized);
+                }
+            }
+            if (passedTime < attackDelay) // even while enemy idles, they're getting ready for attack
+            { passedTime += Time.deltaTime; }
         }
+        
     }
 }

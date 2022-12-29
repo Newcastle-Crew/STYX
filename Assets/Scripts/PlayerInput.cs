@@ -4,7 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // Takes and handles input and movement for a player character
+using UnityEngine.UI;
 #endregion
 
 // using this tutorial playlist: https://www.youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
@@ -13,6 +14,7 @@ public class PlayerInput : MonoBehaviour
 {
     public UnityEvent<Vector2> OnMovementInput, OnPointerInput;
     public UnityEvent OnAttack;
+    public GameObject myUI;
 
     [SerializeField] private InputActionReference movement, attack, pointerPosition;
 
@@ -39,4 +41,14 @@ public class PlayerInput : MonoBehaviour
 
     private void OnDisable()
     { attack.action.performed -= PerformAttack; }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Exit")
+        {
+            //SceneManager.LoadScene("GameScene"); // Lets the player fire or rotate the cannon when they're in the right spot.
+            myUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
 }
