@@ -35,4 +35,9 @@ public class AgentMover : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
         rb2d.velocity = oldMovementInput * currentSpeed;
     }
+
+    public void upgradeSpeed()
+    {
+        acceleration += 5f;
+    }
 }

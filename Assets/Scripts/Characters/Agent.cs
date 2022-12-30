@@ -34,7 +34,7 @@ public class Agent : MonoBehaviour
     {
         Vector2 lookDirection = pointerInput - (Vector2)transform.position;
         agentAnimations.RotateToPointer(lookDirection);
-        agentAnimations.PlayAnimation(movementInput);
+        //agentAnimations.PlayAnimation(movementInput); /// reactivate this when there's a moving animation to be played
     }
 
     private void Update()

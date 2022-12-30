@@ -1,4 +1,4 @@
-﻿#region 'Using' information
+#region 'Using' information
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,7 @@ using UnityEngine.Events;
 // using these tuts: https://youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
 // also using this tutorial: https://youtu.be/gbFBWxtpgpQ
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int currentHealth, maxHealth;
 
@@ -16,26 +16,11 @@ public class Health : MonoBehaviour
 
     [SerializeField] private bool isDead = false;
 
-    public GameObject enemy;
-
-    public void Spawn()
-    {
-        gameObject.SetActive(enemy);
-    }
-
     public void InitializeHealth(int healthValue)
     {
         currentHealth = healthValue;
         maxHealth = healthValue;
         isDead = false;
-    }
-
-    public bool IsAlive()
-    {
-        if (currentHealth >= 1)
-            return true;
-        else
-            return false;
     }
 
     public void GetHit(int amount, GameObject sender)
@@ -47,7 +32,7 @@ public class Health : MonoBehaviour
 
         currentHealth -= amount;
 
-        if(currentHealth > 0)
+        if (currentHealth > 0)
         {
             OnHitWithReference?.Invoke(sender);
         }

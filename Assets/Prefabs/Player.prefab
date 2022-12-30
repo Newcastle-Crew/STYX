@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 4469504118017493048}
   - component: {fileID: 4469504118017493052}
   - component: {fileID: 4469504118017493024}
-  - component: {fileID: 4469504118017493050}
   - component: {fileID: 4469504118017493027}
   - component: {fileID: 4469504118017493055}
   - component: {fileID: 4469504118017493053}
   - component: {fileID: 4469504118017493051}
+  - component: {fileID: 6479660603462416735}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -107,27 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabe1f1d1d769c946921f06baf883b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4469504118017493050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4469504118017493029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3be5fbfbc383314b92d0a6eccdfda1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
-  OnHitWithReference:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeathWithReference:
-    m_PersistentCalls:
-      m_Calls: []
-  isDead: 0
 --- !u!114 &4469504118017493027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372907160f27cc0459a7d1645402f8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSculptor: 0
 --- !u!95 &4469504118017493053
 Animator:
   serializedVersion: 4
@@ -248,11 +228,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  myUI: {fileID: 0}
   movement: {fileID: 1227444041571812860, guid: 555889908e8f32e4ea7d7128828e8ce1,
     type: 3}
   attack: {fileID: -6155201120894420265, guid: 555889908e8f32e4ea7d7128828e8ce1, type: 3}
   pointerPosition: {fileID: -3421880948074552116, guid: 555889908e8f32e4ea7d7128828e8ce1,
     type: 3}
+--- !u!114 &6479660603462416735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469504118017493029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3be5fbfbc383314b92d0a6eccdfda1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  OnHitWithReference:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathWithReference:
+    m_PersistentCalls:
+      m_Calls: []
+  isDead: 0
+  enemy: {fileID: 0}
 --- !u!1 &4469504118651946935
 GameObject:
   m_ObjectHideFlags: 0

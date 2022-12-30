@@ -8,6 +8,8 @@ public class AgentAnimations : MonoBehaviour
 {
     private Animator animator;
 
+    public bool isSculptor = false;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -15,12 +17,24 @@ public class AgentAnimations : MonoBehaviour
 
     public void RotateToPointer(Vector2 lookDirection) // basically just moves the character to face whatever they need to face
     {
-        Vector3 scale = transform.localScale;
-        if (lookDirection.x > 0)
-        { scale.x = 2; }
-        else if (lookDirection.x < 0)
-        { scale.x = -2; }
-        transform.localScale = scale;
+        if(isSculptor == false)
+        {
+            Vector3 scale = transform.localScale;
+            if (lookDirection.x > 0)
+            { scale.x = 2; }
+            else if (lookDirection.x < 0)
+            { scale.x = -2; }
+            transform.localScale = scale;
+        }
+        if(isSculptor == true)
+        {
+            Vector3 scale = transform.localScale;
+            if (lookDirection.x > 0)
+            { scale.x = 3; }
+            else if (lookDirection.x < 0)
+            { scale.x = -3; }
+            transform.localScale = scale;
+        }
     }
 
     public void PlayAnimation(Vector2 movementInput)

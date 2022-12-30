@@ -141,6 +141,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  enemy: {fileID: 3937622854400021537}
 --- !u!114 &3937622854400021563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372907160f27cc0459a7d1645402f8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSculptor: 0
 --- !u!95 &3937622854400021561
 Animator:
   serializedVersion: 4
@@ -246,10 +248,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
+  target: {fileID: 0}
+  target2: {fileID: 0}
   chaseDistanceThreshold: 5
   attackDistanceThreshold: 0.8
   attackDelay: 1
+  isSculptor: 0
 --- !u!114 &3937622854400021595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 3937622854400021562}
-  strength: 7
+  strength: 3
   delay: 0.3
   OnBegin:
     m_PersistentCalls:
