@@ -59,9 +59,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
             if (passedTime < attackDelay) // even while enemy idles, they're getting ready for attack
-            {
-                passedTime += Time.deltaTime;
-            }
+            { passedTime += Time.deltaTime; }
         }
         
         if(target != null)

@@ -13,6 +13,10 @@ public class cannonScript : MonoBehaviour
     // todo: find a way to show the 'cooldown' before the cannon is ready to shoot again
     
     public Transform firepoint; // The exact area that the cannonball fires from. More could be added for upgrades or something.
+    public Transform firepoint2; 
+    public Transform firepoint3;
+
+    public bool splitShot; // upgrade bool, activates the ability to fire two shots diagonally. replaces ability to shoot straight
 
     public GameObject bullet; // The cannonball that fires.
     public GameObject cannon; // The cannon itself, that can be rotated.
@@ -40,7 +44,16 @@ public class cannonScript : MonoBehaviour
     
     void Update()
     {
-        if(readyToGo == true && Input.GetKeyDown(KeyCode.E) && timeBetween <= 0)
+        if (splitShot == true)
+        {
+            if (readyToGo == true && Input.GetKeyDown(KeyCode.E) && timeBetween <= 0)
+            {
+                Instantiate(bullet, firepoint2.position, firepoint2.rotation);
+                Instantiate(bullet, firepoint3.position, firepoint3.rotation);
+                timeBetween = startTimeBetween;
+            }
+        }
+        if (readyToGo == true && Input.GetKeyDown(KeyCode.E) && timeBetween <= 0)
         {
             Instantiate(bullet,firepoint.position,firepoint.rotation);
             timeBetween = startTimeBetween;
@@ -51,7 +64,7 @@ public class cannonScript : MonoBehaviour
             // Could add a negative sound effect here to show that it's not ready yet.
         }
 
-        if(readyToGo == true && Input.GetKeyDown(KeyCode.Space))
+        if (readyToGo == true && Input.GetKeyDown(KeyCode.Space) && !splitShot)
         { Rotate(); }
     }
 

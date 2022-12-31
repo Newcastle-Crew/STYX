@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  acceleration: 25
-  deacceleration: 100
+  acceleration: 20
+  deacceleration: 200
   currentSpeed: 0
 --- !u!114 &8607052046962784343
 MonoBehaviour:
@@ -140,6 +140,7 @@ MonoBehaviour:
   OnDeathWithReference:
     m_PersistentCalls:
       m_Calls: []
+  cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
   isDead: 0
   enemy: {fileID: 8607052046962784338}
 --- !u!114 &8607052046962784328
@@ -551,7 +552,7 @@ MonoBehaviour:
   characterRenderer: {fileID: 8607052048804425071}
   weaponRenderer: {fileID: 8607052048182605448}
   animator: {fileID: 8607052048182605451}
-  attackDelay: 0.3
+  attackDelay: 0.5
   circleOrigin: {fileID: 8607052048068966339}
   attackRadius: 0
 --- !u!1 &8607052048804425069

@@ -10,18 +10,18 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int currentHealth, maxHealth;
+    [SerializeField] public int currentHealth, maxHealth;
 
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 
-    [SerializeField] private bool isDead = false;
+    public GameObject cb; // cannonballs
 
-    public GameObject enemy;
+    [SerializeField] public bool isDead = false;
+
+    public GameObject enemy; // spawns enemies
 
     public void Spawn()
-    {
-        gameObject.SetActive(enemy);
-    }
+    { gameObject.SetActive(enemy); } // enemies set their own gameObjects to active when it's showtime
 
     public void InitializeHealth(int healthValue)
     {
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
         isDead = false;
     }
 
-    public bool IsAlive()
+    public bool IsAlive() // keeps track of enemies' living status for the wave spawner
     {
         if (currentHealth >= 1)
             return true;
@@ -57,5 +57,18 @@ public class Health : MonoBehaviour
             isDead = true;
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<cannonballScript>() != null)
+        {
+            WeBall();
+        }
+    }
+
+    public void WeBall()
+    {
+        GetHit(100, cb);
     }
 }

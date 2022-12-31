@@ -140,6 +140,7 @@ MonoBehaviour:
   OnDeathWithReference:
     m_PersistentCalls:
       m_Calls: []
+  cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
   isDead: 0
   enemy: {fileID: 3937622854400021537}
 --- !u!114 &3937622854400021563
