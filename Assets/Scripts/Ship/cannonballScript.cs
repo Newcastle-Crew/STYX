@@ -11,7 +11,7 @@ public class cannonballScript : MonoBehaviour
     public SpriteRenderer ballSprite; // makes the ball turn invisible after hitting an enemy
 
 
-    Rigidbody2D rb; // woah, phsyics!
+    Rigidbody2D rb; // woah, physics!
 
     public bool Blasting; // supposed to signal the Sound Checks script to play sound, doesn't work rn
 
