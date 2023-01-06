@@ -69,6 +69,6 @@ public class Health : MonoBehaviour
 
     public void WeBall()
     {
-        GetHit(100, cb);
+        GetHit(100, cb); // cannonball does 100 damage on hit. Cyoar!
     }
 }

@@ -29,19 +29,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
     }
 
     public void Pause()
     {
-        Cursor.visible = true;
+        //Cursor.visible = true;
         Time.timeScale = 0f;
         GameIsPaused = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
     }
 }
