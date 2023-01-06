@@ -10,6 +10,8 @@ public class cannonballScript : MonoBehaviour
 
     public SpriteRenderer ballSprite; // makes the ball turn invisible after hitting an enemy
 
+    public bool biggerBalls;
+    public float scaleFactor = 2f;
 
     Rigidbody2D rb; // woah, physics!
 
@@ -17,6 +19,11 @@ public class cannonballScript : MonoBehaviour
 
     void Start()
     {
+        if (biggerBalls)
+        {
+            transform.localScale *= scaleFactor;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
         

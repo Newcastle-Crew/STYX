@@ -38,6 +38,7 @@ public class AgentMover : MonoBehaviour
 
     public void upgradeSpeed()
     {
-        acceleration += 5f;
+        acceleration += 2.5f;
+        maxSpeed += 1f;
     }
 }

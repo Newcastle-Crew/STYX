@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame()
-    { SceneManager.LoadScene("WestyScene"); } // Loads the game.
+    { SceneManager.LoadScene("GameScene"); } // Loads the game.
 
     public void QuitGame()
     {

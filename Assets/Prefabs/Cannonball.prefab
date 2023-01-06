@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1111060246488720007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.91, y: 1.347, z: -4.009864}
-  m_LocalScale: {x: 1.7898818, y: 1.7898818, z: 1.7898818}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   ballSprite: {fileID: 0}
-  enemyHealth: {fileID: 0}
-  cb: {fileID: 1111060246488720007}
+  biggerBalls: 1
+  scaleFactor: 2.1
   Blasting: 0
 --- !u!82 &-4988895256566857529
 AudioSource:

@@ -12,10 +12,11 @@ public class cannonScript : MonoBehaviour
     // todo: find a way to show a 'countdown' on screen before the cannon shoots
     // todo: find a way to show the 'cooldown' before the cannon is ready to shoot again
     
-    public Transform firepoint; // The exact area that the cannonball fires from. More could be added for upgrades or something.
-    public Transform firepoint2; 
-    public Transform firepoint3;
+    public Transform firepoint; // The exact area that the cannonball fires from.
+    public Transform firepoint2; // additional firepoint, used for split shot
+    public Transform firepoint3; // see above
 
+    public bool lowerCannon; // Cannons on the bottom of the boat have different rotations.
     public bool splitShot; // upgrade bool, activates the ability to fire two shots diagonally. replaces ability to shoot straight
 
     public GameObject bullet; // The cannonball that fires.
@@ -25,6 +26,7 @@ public class cannonScript : MonoBehaviour
     public float startTimeBetween; // begins a countdown between shots
 
     float cannonZ = 0; // The cannon's Z rotation
+    float lowcannonZ = 180; // The cannon's Z rotationW
     private bool readyToGo; // Checks for player in the right position (inside trigger box).
 
     float timeUntilShoot = 5f; // unused; see first TODO
@@ -34,12 +36,25 @@ public class cannonScript : MonoBehaviour
 
     void Rotate() // rotates the cannon to left, right, or back to middle
     {
-        if(cannonZ + 45 > 45)
-            cannonZ = -45;
-        else
-            cannonZ += 45;
+        if(!lowerCannon) // if the cannon is on the upper side...
+        {
+            if (cannonZ + 45 > 45) // and rotating it would put it past the 45 degree mark...
+                cannonZ = -45; // put it in the other direction instead
+            else
+                cannonZ += 45; // otherwise, rotate it no problem
 
-        transform.rotation = Quaternion.Euler(0, 0, cannonZ);
+            transform.rotation = Quaternion.Euler(0, 0, cannonZ);
+        }
+
+        if(lowerCannon)
+        {
+            if(lowcannonZ - 45 < 135)
+                lowcannonZ = 225;
+            else
+                lowcannonZ -= 45;
+
+            transform.rotation = Quaternion.Euler(0, 0, lowcannonZ);
+        }
     }
     
     void Update()
@@ -82,5 +97,10 @@ public class cannonScript : MonoBehaviour
     {
         readyToGo = false; // Stops rotations / firing after leaving the right spot.
         }
+    }
+
+    public void SplitShot()
+    {
+        splitShot = true;
     }
 }
