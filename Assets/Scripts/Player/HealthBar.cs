@@ -34,13 +34,19 @@ public class HealthBar : MonoBehaviour
         ColorChanger();
     }
 
-    void HealthBarFiller() 
-    { healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)health.currentHealth / (float)health.maxHealth, lerpSpeed); } // makes sure the bar is filled
+    void HealthBarFiller() // makes sure the bar is filled
+    { healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)health.currentHealth / (float)health.maxHealth, lerpSpeed); } 
 
     void ColorChanger()
     {
-        Color healthColor = Color.Lerp(Color.red, Color.green, (float)health.currentHealth / (float)health.maxHealth); 
-        healthBar.color = healthColor; 
+        if(upgrades == 0)
+        { Color healthColor = Color.Lerp(Color.red, Color.yellow, (float)health.currentHealth / (float)health.maxHealth); healthBar.color = healthColor; }
+        if(upgrades == 1)
+        { Color healthColor = Color.Lerp(Color.red, Color.cyan, (float)health.currentHealth / (float)health.maxHealth); healthBar.color = healthColor; }    
+        if(upgrades == 2)
+        { Color healthColor = Color.Lerp(Color.red, Color.green, (float)health.currentHealth / (float)health.maxHealth); healthBar.color = healthColor; }
+        if (upgrades == 3)
+        { Color healthColor = Color.Lerp(Color.red, Color.magenta, (float)health.currentHealth / (float)health.maxHealth); healthBar.color = healthColor; }
     }
 
     public void Heal(int healingPoints)
@@ -78,7 +84,5 @@ public class HealthBar : MonoBehaviour
     }
 
     public void FullHeal()
-    {
-        health.currentHealth = health.maxHealth;
-    }
+    { health.currentHealth = health.maxHealth; }
 }

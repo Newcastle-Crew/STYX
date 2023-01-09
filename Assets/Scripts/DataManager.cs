@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 #endregion
 
 public class DataManager : MonoBehaviour
@@ -16,13 +17,21 @@ public class DataManager : MonoBehaviour
 
     #region Publics 
     public int Level1Obols { get; set; } = 0; // number of obols (coins) the player got in level 1
+    public int SpeedUpgrades { get; set; } = 0; // number of speed upgrades the player has unlocked
+
+    public float Acceleration { get; set; } = 50f; // player's acceleration value, tracked for speed upgrades
+    public float MaxSpeed { get; set; } = 2f; // ditto above, max speed
+
     public bool Level1Complete { get; set; } // checks for the completion of the level
     public bool CerberusUnlocked { get; set; } // whether or not the player unlocked cerberus
+    public bool BonusCannons { get; set; } // tracks the number of extra cannons the player has unlocked
+    public bool BigBalls { get; set; } // tracks the 'Big Balls' cannon upgrade
+    public bool SplitShot { get; set; } // tracks the 'Big Balls' cannon upgrade
     #endregion
 
     public void Awake()
     {
-        if (Instance != null) // if an instance of the datamanager already exists
+        if (Instance != null ) // if an instance of the datamanager already exists, and it's not supposed to
         { Destroy(gameObject); } // destroy it
         else
         { Instance = this; } // and make this one the real slim shady. makes sure the thing works, and stops the game from making more when a new scene's loaded.
@@ -36,7 +45,7 @@ public class DataManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveData.dat");
 
-        PlayerData data = new PlayerData(Level1Obols, Level1Complete, CerberusUnlocked);
+        PlayerData data = new PlayerData(Level1Obols, Level1Complete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed);
         
         bf.Serialize(file, data);
         file.Close();
@@ -54,10 +63,36 @@ public class DataManager : MonoBehaviour
             Level1Obols = data.Level1Obols;
             Level1Complete = data.Level1Complete;
             CerberusUnlocked = data.CerberusUnlocked;
+            BonusCannons = data.BonusCannons;
+            BigBalls = data.BigBalls;
+            SplitShot = data.SplitShot;
+            SpeedUpgrades = data.SpeedUpgrades;
+            Acceleration = data.Acceleration;
+            MaxSpeed = data.MaxSpeed;
 
             file.Close();
         }
-    }    
+    }
+
+    public void GiveExtraCannons()
+    {
+        BonusCannons = true;
+        SaveGame();
+    }
+
+    public void EngorgeBalls()
+    {
+        BigBalls = true;
+        SplitShot = false;
+        SaveGame();
+    }
+
+    public void SplitShots()
+    {
+        SplitShot = true;
+        BigBalls = false;
+        SaveGame();
+    }
 }
 
 [Serializable]
@@ -85,20 +120,43 @@ public class PlayerData
 
     #endregion
 
-    #region Unlockable bools
+    #region Unlockable bools & ints
     /// <summary>
-    /// These bool-y bad boys are used to make sure the right sprites load / stay invisible in the Grapevine.
+    /// These bad boys are used to make sure anything unlocked, stays that way - between scenes.
     /// </summary>
 
     private bool cerberusUnlocked;
     public bool CerberusUnlocked => cerberusUnlocked;
 
+    private bool bonusCannons;
+    public bool BonusCannons => bonusCannons;
+
+    private bool bigBalls;
+    public bool BigBalls => bigBalls;
+
+    private bool splitShot;
+    public bool SplitShot => splitShot;
+
+    private int speedUpgrades;
+    public int SpeedUpgrades => speedUpgrades;
+
+    private float acceleration;
+    public float Acceleration => acceleration;
+
+    private float maxSpeed;
+    public float MaxSpeed => maxSpeed;
     #endregion
 
-    public PlayerData(int l1o, bool l1c, bool dogN)
+    public PlayerData(int l1o, bool l1c, bool dogN, bool cannons, bool balls, bool split, int speed, float acc, float maxspeed)
     {
         level1Obols = l1o;
         level1Complete = l1c;
         cerberusUnlocked = dogN;
+        bonusCannons = cannons;
+        bigBalls = balls;
+        splitShot = split;
+        speedUpgrades = speed;
+        acceleration = acc;
+        maxSpeed = maxspeed;
     }
 }

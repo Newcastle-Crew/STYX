@@ -94,6 +94,7 @@ MonoBehaviour:
   maxSpeed: 2
   acceleration: 50
   deacceleration: 100
+  isPlayer: 1
   currentSpeed: 0
 --- !u!114 &4469504118017493024
 MonoBehaviour:
@@ -228,7 +229,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  myUI: {fileID: 0}
   movement: {fileID: 1227444041571812860, guid: 555889908e8f32e4ea7d7128828e8ce1,
     type: 3}
   attack: {fileID: -6155201120894420265, guid: 555889908e8f32e4ea7d7128828e8ce1, type: 3}

@@ -20,9 +20,7 @@ public class cannonballScript : MonoBehaviour
     void Start()
     {
         if (biggerBalls)
-        {
-            transform.localScale *= scaleFactor;
-        }
+        { transform.localScale *= scaleFactor; }
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;

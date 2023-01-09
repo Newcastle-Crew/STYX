@@ -7,9 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public void Level1()
-    { SceneManager.LoadScene("GameScene"); } // Loads level 1
+    public void Level1() // Loads level 1
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("GameScene");
+    } 
 
-    public void Level2()
-    { SceneManager.LoadScene("Level2"); } // Loads level 1
+    public void Level2() // Loads level 2
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("Level2");
+    } 
+
+    public void LevelSelect() // Loads the level select scene
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("LevelSelect");
+    }
 }

@@ -7,15 +7,17 @@ using UnityEngine;
 public class cannonScript : MonoBehaviour
 {
     /// Made with this tutorial: https://youtu.be/SDl5YTis__k
-    /// rotations were all me
+    /// rotations & split shot were all me
 
     // todo: find a way to show a 'countdown' on screen before the cannon shoots
     // todo: find a way to show the 'cooldown' before the cannon is ready to shoot again
-    
+
+    #region Firepoints
     public Transform firepoint; // The exact area that the cannonball fires from.
     public Transform firepoint2; // additional firepoint, used for split shot
     public Transform firepoint3; // see above
-
+    #endregion
+    
     public bool lowerCannon; // Cannons on the bottom of the boat have different rotations.
     public bool splitShot; // upgrade bool, activates the ability to fire two shots diagonally. replaces ability to shoot straight
 
@@ -85,22 +87,18 @@ public class cannonScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Player")
-        {
-            readyToGo = true; // Lets the player fire or rotate the cannon when they're in the right spot.
-        }
+        if (other.tag == "Player")
+        { readyToGo = true; } // Lets the player fire or rotate the cannon when they're in the right spot.   Bugged currently as enemy weapons are tagged 'player'    
     }
 
     private void OnTriggerExit2D(Collider2D other) 
     {
-    if(other.tag == "Player")
-    {
-        readyToGo = false; // Stops rotations / firing after leaving the right spot.
+        if(other.tag == "Player")
+        {
+            readyToGo = false; // Stops rotations / firing after leaving the right spot.
         }
     }
 
     public void SplitShot()
-    {
-        splitShot = true;
-    }
+    { splitShot = true; }
 }

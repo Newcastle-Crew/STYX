@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem; // Takes and handles input and movement for a player character
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 #endregion
 
 // using this tutorial playlist: https://www.youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
@@ -14,7 +14,7 @@ public class PlayerInput : MonoBehaviour
 {
     public UnityEvent<Vector2> OnMovementInput, OnPointerInput;
     public UnityEvent OnAttack;
-    public GameObject myUI;
+    //public GameObject myUI; // formerly used to just show UI when the level was completed.
 
     [SerializeField] private InputActionReference movement, attack, pointerPosition;
 
@@ -46,9 +46,9 @@ public class PlayerInput : MonoBehaviour
     {
         if (other.tag == "Exit")
         {
-            //SceneManager.LoadScene("GameScene"); // Lets the player fire or rotate the cannon when they're in the right spot.
-            myUI.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("LevelSelect"); // Sends the player to the level select screen when they've beaten the level.
+            //myUI.SetActive(true);
+            //Cursor.lockState = CursorLockMode.None;
         }
     }
 }
