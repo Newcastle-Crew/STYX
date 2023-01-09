@@ -95,6 +95,7 @@ MonoBehaviour:
   maxSpeed: 2
   acceleration: 50
   deacceleration: 100
+  isPlayer: 0
   currentSpeed: 0
 --- !u!114 &3937622854400021540
 MonoBehaviour:
@@ -251,7 +252,7 @@ MonoBehaviour:
         m_CallState: 2
   target: {fileID: 0}
   target2: {fileID: 0}
-  chaseDistanceThreshold: 5
+  chaseDistanceThreshold: 8
   attackDistanceThreshold: 0.6
   attackDelay: 1
   isSculptor: 0

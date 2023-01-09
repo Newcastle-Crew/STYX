@@ -28,7 +28,7 @@ public class Gossip : MonoBehaviour
         { currentGossip.text = "Aren't those freaky bird ladies your sisters? Tough luck, man."; }
 
         if(gossipNum == 2)
-        { currentGossip.text = "Ole' Hephy never stops hammering at that anvil. Maybe they'd be willing to look at your boat?"; }
+        { currentGossip.text = "Ole' Hephy is never far from that anvil. Maybe she'd be willing to look at your boat?"; }
 
         if (gossipNum == 3)
         { currentGossip.text = "That's all I've got for now. Buy something, will you?"; }
@@ -46,7 +46,7 @@ public class Gossip : MonoBehaviour
         if (currentGossip.text == "Aren't those freaky bird ladies your sisters? Tough luck, man.")
         { gossipNum = 2; } // keres is "2"
 
-        if(currentGossip.text == "Ole' Hephy never stops hammering at that anvil. Maybe they'd be willing to look at your boat?")
+        if(currentGossip.text == "Ole' Hephy is never far from that anvil. Maybe she'd be willing to look at your boat?")
         { gossipNum = 3; } // hephaestus is "3"
     }
 }

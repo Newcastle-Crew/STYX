@@ -18,6 +18,8 @@ public class DataManager : MonoBehaviour
     #region Publics 
     public int Level1Obols { get; set; } = 0; // number of obols (coins) the player got in level 1
     public int SpeedUpgrades { get; set; } = 0; // number of speed upgrades the player has unlocked
+    public int HealthUpgrades { get; set; } = 0; // number of health upgrades the player has unlocked
+    public int MaxHealth { get; set; } = 10; // number of health upgrades the player has unlocked
 
     public float Acceleration { get; set; } = 50f; // player's acceleration value, tracked for speed upgrades
     public float MaxSpeed { get; set; } = 2f; // ditto above, max speed
@@ -45,7 +47,7 @@ public class DataManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveData.dat");
 
-        PlayerData data = new PlayerData(Level1Obols, Level1Complete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed);
+        PlayerData data = new PlayerData(Level1Obols, Level1Complete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed, HealthUpgrades, MaxHealth);
         
         bf.Serialize(file, data);
         file.Close();
@@ -69,6 +71,8 @@ public class DataManager : MonoBehaviour
             SpeedUpgrades = data.SpeedUpgrades;
             Acceleration = data.Acceleration;
             MaxSpeed = data.MaxSpeed;
+            HealthUpgrades = data.HealthUpgrades;
+            MaxHealth = data.MaxHealth;
 
             file.Close();
         }
@@ -145,9 +149,15 @@ public class PlayerData
 
     private float maxSpeed;
     public float MaxSpeed => maxSpeed;
+
+    private int healthUpgrades;
+    public int HealthUpgrades => healthUpgrades;
+
+    private int maxHealth;
+    public int MaxHealth => maxHealth;
     #endregion
 
-    public PlayerData(int l1o, bool l1c, bool dogN, bool cannons, bool balls, bool split, int speed, float acc, float maxspeed)
+    public PlayerData(int l1o, bool l1c, bool dogN, bool cannons, bool balls, bool split, int speed, float acc, float maxspeed, int uhealth, int mhealth)
     {
         level1Obols = l1o;
         level1Complete = l1c;
@@ -158,5 +168,7 @@ public class PlayerData
         speedUpgrades = speed;
         acceleration = acc;
         maxSpeed = maxspeed;
+        healthUpgrades = uhealth;
+        maxHealth = mhealth;
     }
 }
