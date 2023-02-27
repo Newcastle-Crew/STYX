@@ -20,5 +20,11 @@ public class OpenLinks : MonoBehaviour
     public void JamesCredit()
     { Application.OpenURL("https://github.com/JAMZ295"); }
 
+    public void PaulCredit()
+    { Application.OpenURL("https://www.youtube.com/@PaulWilliamson93/videos"); }
+
     // credits for stuff we use will go below here
+
+    public void FontCredit()
+    { Application.OpenURL("https://www.dafont.com/oh-mighty-isis.font"); }
 }
