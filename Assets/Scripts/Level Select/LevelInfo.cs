@@ -16,7 +16,7 @@ public class LevelInfo : MonoBehaviour
     [SerializeField] Button L4;
     [SerializeField] Button L5;
     [SerializeField] Button L6;
-    [SerializeField] Button L7;
+    //[SerializeField] Button L7;
 
     public void Back2Normal()
     { DescText.text = "Level Select"; }
@@ -47,8 +47,8 @@ public class LevelInfo : MonoBehaviour
     { DescText.text = "L5 Todo"; }
 
     public void L6Click()
-    { DescText.text = "L6 Todo"; }
+    { DescText.text = "Here be Hydras"; }
 
-    public void L7Click()
-    { DescText.text = "L7 Todo"; }
+    //public void L7Click() // L7 is currently hidden to avoid giving ourselves extra work
+    //{ DescText.text = "L7 Todo"; }
 }
