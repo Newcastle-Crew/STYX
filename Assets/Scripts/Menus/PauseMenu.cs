@@ -8,13 +8,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenuUI;
-
-    private void Awake()
-    {
-        Pause();
-    }
 
     void Update()
     {

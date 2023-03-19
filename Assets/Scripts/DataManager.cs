@@ -24,7 +24,7 @@ public class DataManager : MonoBehaviour
     public float Acceleration { get; set; } = 50f; // player's acceleration value, tracked for speed upgrades
     public float MaxSpeed { get; set; } = 2f; // ditto above, max speed
 
-    public bool Level1Complete { get; set; } // checks for the completion of the level
+    public bool Level1Complete { get; set; } // checks for the completion of a level
     public bool CerberusUnlocked { get; set; } // whether or not the player unlocked cerberus
     public bool BonusCannons { get; set; } // tracks the number of extra cannons the player has unlocked
     public bool BigBalls { get; set; } // tracks the 'Big Balls' cannon upgrade

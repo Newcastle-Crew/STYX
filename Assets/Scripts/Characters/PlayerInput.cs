@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
         OnPointerInput?.Invoke(GetPointerInput());
     }
 
-    private Vector2 GetPointerInput()
+    public Vector2 GetPointerInput()
     {
         Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
         mousePos.z = Camera.main.nearClipPlane; // will become relevant when we have a moving camera
@@ -35,9 +35,7 @@ public class PlayerInput : MonoBehaviour
     { attack.action.performed += PerformAttack; }
 
     private void PerformAttack(InputAction.CallbackContext obj)
-    {
-        OnAttack?.Invoke();
-    }
+    { OnAttack?.Invoke(); }
 
     private void OnDisable()
     { attack.action.performed -= PerformAttack; }
