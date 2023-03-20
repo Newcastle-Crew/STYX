@@ -7,6 +7,12 @@ using UnityEngine;
 public class Wheel : MonoBehaviour
 {
     private bool readyToGo; // Checks for player in the right position (inside trigger box).
+    Animator anim; // for doing the animation when the wheel is used
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();       
+    }
 
     // TODO lifted from cannonScript - should ideally be moved into a parent class
     void Update()
@@ -16,7 +22,7 @@ public class Wheel : MonoBehaviour
             // TODO iterate over to avoid duplicate if statement
             if (Input.GetKeyDown(KeyCode.E))
             {
-                MoveShipDown();
+                MoveShipDown();               
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -26,8 +32,7 @@ public class Wheel : MonoBehaviour
             {
                 MoveShipCenter();
             }
-        }
-
+        }       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,11 +48,17 @@ public class Wheel : MonoBehaviour
     }
 
     private void MoveShipUp()
-    { Debug.Log("MoveShipUp"); } // TODO: actually move ship up & have a bool for the ship being 'up'
+    { Debug.Log("MoveShipUp");
+        anim.Play("WheelMove");
+    } // TODO: actually move ship up & have a bool for the ship being 'up'
 
     private void MoveShipDown()
-    { Debug.Log("MoveShipDown"); } // TODO: actually move ship down & have a bool for the ship being 'down'
+    { Debug.Log("MoveShipDown");
+        anim.Play("WheelMove");
+    } // TODO: actually move ship down & have a bool for the ship being 'down'
 
     private void MoveShipCenter()
-    { Debug.Log("MoveShipCenter"); } // TODO: actually move ship down & & have a bool for the ship being 'centred'
+    { Debug.Log("MoveShipCenter");
+        anim.Play("WheelMove");
+    } // TODO: actually move ship down & & have a bool for the ship being 'centred'
 }
