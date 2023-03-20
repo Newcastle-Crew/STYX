@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3785537632172978751}
   - component: {fileID: 8031442376639912102}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ball Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651605928771629900}
   - component: {fileID: 4421289290065839047}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Split Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 7910963287714863643}
   - component: {fileID: 7910963287714863636}
   - component: {fileID: 7910963287714863637}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7910963287975253112}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: firePoint Right
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7910963288031727671}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: firePoint Left
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7910963288862317368}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: firePoint Middle
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}

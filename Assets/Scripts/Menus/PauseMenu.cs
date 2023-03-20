@@ -8,22 +8,23 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenuUI;
-
-    private void Awake()
-    {
-        Pause();
-    }
+    [SerializeField] GameObject gameplayUI;
 
     void Update()
     {
         if (Input.GetButtonDown("Pause"))
         {
             if (GameIsPaused)
-            { Resume(); }
+            { 
+                Resume();
+                gameplayUI.SetActive(true);
+            }
             else
-            { Pause(); }
+            {
+                gameplayUI.SetActive(false);
+                Pause();
+            }
         }
     }
 

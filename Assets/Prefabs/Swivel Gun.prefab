@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3950709615306812260}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: firePoint Middle
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7407984342842992478}
   - component: {fileID: 7407984342842992483}
   - component: {fileID: 7407984342842992482}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Swivel Gun
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
