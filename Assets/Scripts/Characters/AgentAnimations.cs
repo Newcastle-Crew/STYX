@@ -15,7 +15,7 @@ public class AgentAnimations : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void RotateToPointer(Vector2 lookDirection) // basically just makes the character face whatever they need to face
+    public void RotateToPointer(Vector2 lookDirection) // basically just moves the character to face whatever they need to face
     {
         if(isSculptor == false)
         {

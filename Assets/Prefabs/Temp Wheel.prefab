@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8630675437242588976}
   - component: {fileID: 8630675437242588977}
   - component: {fileID: 8630675437242588990}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Temp Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,21 +8,14 @@ using UnityEngine.Events;
 public class AnimationEventHelper : MonoBehaviour
 {
     public UnityEvent OnAnimationEventTriggered, OnAttackPerformed;
-    public bool Melee; // Set in inspector.
 
     public void TriggerEvent()
     {
-        if(Melee)
-        {
-            OnAnimationEventTriggered?.Invoke();
-        }
+        OnAnimationEventTriggered?.Invoke();
     }
 
     public void TriggerAttack()
     {
-        if(Melee)
-        {
-            OnAttackPerformed?.Invoke();
-        }
+        OnAttackPerformed?.Invoke();
     }
 }

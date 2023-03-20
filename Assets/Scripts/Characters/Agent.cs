@@ -43,7 +43,9 @@ public class Agent : MonoBehaviour
         //movementInput = movement.action.ReadValue<Vector2>().normalized; // may not need to normalize
 
         wp.PointerPosition = pointerInput;
+
         agentMover.MovementInput = MovementInput;
+
         AnimateCharacter();
     }
 }
