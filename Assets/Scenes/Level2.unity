@@ -863,6 +863,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -893,27 +903,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 162416285}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &162416281
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1526,6 +1517,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -1556,27 +1557,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 269436442}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &269436438
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2337,7 +2319,7 @@ SpriteRenderer:
   m_Size: {x: 0.84, y: 1.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &364836896
@@ -2549,6 +2531,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -2579,27 +2571,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 394835144}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &394835140
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3636,6 +3609,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -3666,27 +3649,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 631741202}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &631741198
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4849,6 +4813,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -4879,27 +4853,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 870909908}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &870909904
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5164,6 +5119,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1855793256}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &888599461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888599463}
+  - component: {fileID: 888599462}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &888599462
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888599461}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 26a55018ca994bf43bea370727425795,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 3f300e5a79d0f814fb69499aaa70653c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &888599463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888599461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148.12022, y: 231.30566, z: -1.7984176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927021510
 GameObject:
@@ -5730,6 +5814,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -5760,27 +5854,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1009355923}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1009355919
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6661,6 +6736,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -6691,27 +6776,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195206619}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1195206615
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7492,6 +7558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1940354549}
+  gameplayUI: {fileID: 668205091}
 --- !u!114 &1331342207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7603,7 +7670,6 @@ MonoBehaviour:
   SFXMixer: {fileID: 24100000, guid: 9cab8b6a395b7054bb8bb7b5314a1498, type: 2}
   musicSlider: {fileID: 1980339600}
   SFXSlider: {fileID: 1281137224}
-  parent: {fileID: 0}
 --- !u!1 &1351644069
 GameObject:
   m_ObjectHideFlags: 0
@@ -8151,6 +8217,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -8181,27 +8257,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417418164}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1417418160
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8850,6 +8907,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -8880,27 +8947,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1508555238}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1508555234
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10264,6 +10312,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -10294,27 +10352,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855793263}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1855793259
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11175,6 +11214,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -11205,27 +11254,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1929076020}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &1929076016
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12129,6 +12159,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -12159,27 +12199,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2047448609}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &2047448605
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13692,7 +13713,7 @@ SpriteRenderer:
   m_Size: {x: 0.84, y: 1.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1716586252071652012
@@ -13793,6 +13814,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 2.5
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -13823,27 +13854,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 463480053948072073}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 8150662771847849431}
-  target2: {fileID: 1090745905}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.5
-  attackDelay: 2.5
-  isSculptor: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &4064572295893076124
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15641,7 +15653,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &5729348575766035987
@@ -15676,21 +15688,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls: []
   OnPointerInput:
     m_PersistentCalls:
       m_Calls: []
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls: []
-  target: {fileID: 8607052046962784341, guid: 45d713625fe0eb94eb3e7c7098ce58a4, type: 3}
-  target2: {fileID: 3937622854400021542, guid: f38dff694e694834f8a6452fc3564732, type: 3}
-  chaseDistanceThreshold: 3
-  attackDistanceThreshold: 0.8
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!1 &5729348575766035989
 GameObject:
   m_ObjectHideFlags: 0
@@ -17614,6 +17629,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -17644,27 +17669,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5699910934541504750}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &8150662771112024315
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20307,6 +20313,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -20337,27 +20353,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5168381419321553203}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!70 &8772758998931324227
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20386,6 +20383,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24035e6ad818954fad8d6b554816c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringBehaviours: []
+  detectors: []
+  aiData: {fileID: 0}
+  detectionDelay: 0.05
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 0.5
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -20416,27 +20423,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5168381420556367190}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 1090745905}
-  target2: {fileID: 8150662772056420389}
-  chaseDistanceThreshold: 5
-  attackDistanceThreshold: 0.6
-  attackDelay: 1
-  isSculptor: 0
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 0}
 --- !u!114 &9064366291458272709
 MonoBehaviour:
   m_ObjectHideFlags: 0
