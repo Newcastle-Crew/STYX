@@ -11,7 +11,7 @@ public class cannonballScript : MonoBehaviour
     public SpriteRenderer ballSprite; // makes the ball turn invisible after hitting an enemy
 
     public bool biggerBalls;
-    public float scaleFactor = 2f;
+    public float scaleFactor = 1.15f;
 
     Rigidbody2D rb; // woah, physics!
 
