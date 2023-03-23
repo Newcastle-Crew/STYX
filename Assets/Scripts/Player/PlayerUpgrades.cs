@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    public AgentMover playerSpeed; // Set via inspector - makes it so only the player gets this upgrade
+    public PlayerAgentMover playerSpeed; // Set via inspector - makes it so only the player gets this upgrade
 
     #region UI stuff
     private int speedUpgrades = 0; // keeps track of the number of speed upgrades the player has
@@ -21,8 +21,8 @@ public class PlayerUpgrades : MonoBehaviour
     {
         //playerSpeed.acceleration = 50f;
         //playerSpeed.maxSpeed = 2f;
-
         DataManager.Instance.LoadGame();
+
         speedUpgrades = DataManager.Instance.SpeedUpgrades;
 
         UpdatePlayerSpeed();

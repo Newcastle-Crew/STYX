@@ -12,12 +12,10 @@ public class PlayerAgent : MonoBehaviour
 {
     private PlayerAgentAnimations agentAnimations;
     private PlayerAgentMover agentMover;
-
-    private Vector2 pointerInput, movementInput;
-
     private Oar wp;
     private PlayerWeaponParent pwp;
 
+    private Vector2 pointerInput, movementInput;
     public Vector2 PointerInput { get => pointerInput; set => pointerInput = value; }
     public Vector2 MovementInput { get => movementInput; set => movementInput = value; }
 

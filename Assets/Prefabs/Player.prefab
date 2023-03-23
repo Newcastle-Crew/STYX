@@ -281,7 +281,6 @@ MonoBehaviour:
   circleOrigin: {fileID: 4507616058001072820}
   attackRadius: 0
   animator: {fileID: 4507616058089808892}
-  pogbar: {fileID: 0}
   wp: {fileID: 38450732348223974}
   crossbow: {fileID: 7513028437326195194}
 --- !u!1 &4507616058198699918
@@ -349,11 +348,11 @@ GameObject:
   - component: {fileID: 4507616059593927971}
   - component: {fileID: 4507616059593927997}
   - component: {fileID: 4507616059593927995}
-  - component: {fileID: 6441548520185748575}
   - component: {fileID: 5504911024491708424}
   - component: {fileID: 38450733018593102}
   - component: {fileID: 38450733018593103}
   - component: {fileID: 38450733018593200}
+  - component: {fileID: 7722674843402520636}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -369,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4507616059593927973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.01, y: -3.46, z: -0.034474205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -528,29 +527,6 @@ MonoBehaviour:
   attack: {fileID: -6155201120894420265, guid: 555889908e8f32e4ea7d7128828e8ce1, type: 3}
   pointerPosition: {fileID: -3421880948074552116, guid: 555889908e8f32e4ea7d7128828e8ce1,
     type: 3}
---- !u!114 &6441548520185748575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507616059593927973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3be5fbfbc383314b92d0a6eccdfda1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 10
-  maxHealth: 10
-  OnHitWithReference:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeathWithReference:
-    m_PersistentCalls:
-      m_Calls: []
-  cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
-  isDead: 0
-  enemy: {fileID: 0}
 --- !u!70 &5504911024491708424
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -606,8 +582,27 @@ MonoBehaviour:
   maxSpeed: 2
   acceleration: 50
   deacceleration: 100
-  isPlayer: 1
   currentSpeed: 0
+--- !u!114 &7722674843402520636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507616059593927973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bedf16fcff4ee9458fdfde03ad482c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
+  OnHitWithReference:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathWithReference:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7436903081152376822
 PrefabInstance:
   m_ObjectHideFlags: 0

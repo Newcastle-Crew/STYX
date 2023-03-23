@@ -10,12 +10,10 @@ public class PlayerAgentMover : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField] public float maxSpeed = 2, acceleration = 50, deacceleration = 100;
-    [SerializeField] private bool isPlayer = false;
+    [SerializeField] private float currentSpeed = 0;
 
     float maxAcceleration = 57.5f; // highest value that acceleration can go
     float maxMaxSpeed = 5f; // highest value that maxspeed can go
-
-    [SerializeField] private float currentSpeed = 0;
 
     private Vector2 oldMovementInput;
     public Vector2 MovementInput { get; set; }
@@ -24,17 +22,14 @@ public class PlayerAgentMover : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
 
-        if (isPlayer)
-        {
-            acceleration = DataManager.Instance.Acceleration;
-            maxSpeed = DataManager.Instance.MaxSpeed;
-        }
-        else if (isPlayer)
-        {
-            acceleration = 50f;
-            maxSpeed = 2f;
-        }
+        acceleration = 50f; // the player's default speed values.
+        maxSpeed = 2f;
 
+        acceleration = DataManager.Instance.Acceleration; // overrides the player's default speed values if they have upgrades
+        maxSpeed = DataManager.Instance.MaxSpeed;
+
+        //acceleration = DataManager.Instance.Acceleration;
+        //maxSpeed = DataManager.Instance.MaxSpeed;
     }
 
     private void FixedUpdate()
@@ -60,7 +55,7 @@ public class PlayerAgentMover : MonoBehaviour
         DataManager.Instance.Acceleration = acceleration;
         DataManager.Instance.MaxSpeed = maxSpeed;
 
-        if (isPlayer && acceleration > maxAcceleration && maxSpeed > maxMaxSpeed)
+        if (acceleration > maxAcceleration && maxSpeed > maxMaxSpeed)
         {
             acceleration = maxAcceleration;
             maxSpeed = maxMaxSpeed;

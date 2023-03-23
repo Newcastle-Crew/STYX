@@ -74,8 +74,8 @@ public class WeaponParent : MonoBehaviour
         foreach(Collider2D collider in Physics2D.OverlapCircleAll(circleOrigin.position,attackRadius))
         {
             //Debug.Log(collider.name);
-            Health health;
-            if(health = collider.GetComponent<Health>())
+            PlayerHealth health;
+            if(health = collider.GetComponent<PlayerHealth>())
             {
                 health.GetHit(1, transform.parent.gameObject);
             }

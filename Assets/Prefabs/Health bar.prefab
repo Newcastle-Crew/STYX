@@ -89,5 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75aeeee33557c404d9d0e254683d97c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 7722674843402520636, guid: f005047d80a381d499227db837f7139a, type: 3}
+  upgradePoint1: {fileID: 0}
+  upgradePoint2: {fileID: 0}
+  upgradePoint3: {fileID: 0}
   healthBar: {fileID: 7670045141199758645}
-  health: {fileID: 0}

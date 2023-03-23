@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Health health; // set in the inspector - updates the player's health value, and ONLY the player's health value
+    public PlayerHealth health; // set in the inspector - updates the player's health value, and ONLY the player's health value
 
     #region UI stuff
     private int healthUpgrades; // keeps track of the number of health upgrades the player has
