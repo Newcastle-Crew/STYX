@@ -9,7 +9,7 @@ public class Arrows : MonoBehaviour
     public float speed; // how fast the arrows move. set in inspector
     public SpriteRenderer arrowSprite; // makes the arrows turn invisible after hitting an enemy
     public int damage = 3; // how much damage the arrow deals by default
-    Rigidbody2D rb; // woah, physics!
+    Rigidbody2D rb; // woah, physics! 
 
     public bool Firing; /// will do SFX later
 
@@ -18,7 +18,7 @@ public class Arrows : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
 
-        Destroy(gameObject, 1.5f); // destroys the arrow 1.5 seconds after it's been fired
+        Destroy(gameObject, 1.25f); // destroys the arrow 1.25 seconds after it's been fired
         arrowSprite = GetComponent<SpriteRenderer>();
     }
 

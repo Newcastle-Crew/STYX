@@ -12,9 +12,15 @@ public class Oar : MonoBehaviour
     public Transform circleOrigin; // the centre of the 'circle', where melee attacks come from
     public float attackRadius; // how big the area of the attack is
     public Animator animator; // weapons' animators
+    // public ProgressBars pogbar;
 
     public PlayerWeaponParent wp;
     public GameObject crossbow;
+
+    private void Start() 
+    {
+        // pogbar = GetComponentInChildren<ProgressBars>();
+    }
 
     public void ResetIsAttacking()
     { IsAttacking = false; }
