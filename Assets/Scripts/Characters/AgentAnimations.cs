@@ -8,22 +8,22 @@ public class AgentAnimations : MonoBehaviour
 {
     private Animator animator;
 
-    public bool isSculptor = false;
+    public bool isSculptor = false; // sculptors are larger, so their code is slightly different. TODO: just change pixels per unit until satisfactory size
 
     private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+    { animator = GetComponent<Animator>(); }
 
     public void RotateToPointer(Vector2 lookDirection) // basically just moves the character to face whatever they need to face
     {
         if(isSculptor == false)
         {
             Vector3 scale = transform.localScale;
+
             if (lookDirection.x > 0)
             { scale.x = 2; }
             else if (lookDirection.x < 0)
             { scale.x = -2; }
+
             transform.localScale = scale;
         }
         if(isSculptor == true)
@@ -38,7 +38,5 @@ public class AgentAnimations : MonoBehaviour
     }
 
     public void PlayAnimation(Vector2 movementInput)
-    {
-        animator.SetBool("Running", movementInput.magnitude > 0);
-    }
+    { animator.SetBool("Running", movementInput.magnitude > 0); }
 }
