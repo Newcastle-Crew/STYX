@@ -506,9 +506,6 @@ MonoBehaviour:
   attackDelay: 0.3
   circleOrigin: {fileID: 4469504118651946932}
   attackRadius: 0
-  Melee: {fileID: 0}
-  Ranged: {fileID: 0}
-  crosshair: {fileID: 0}
 --- !u!1 &4469504119389740314
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +606,17 @@ PrefabInstance:
         type: 3}
       propertyPath: wp
       value: 
-      objectReference: {fileID: 4469504118874081932}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010878653240406431, guid: dfe34c5cb896fb140941c253801d35d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1448
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010878653240406431, guid: dfe34c5cb896fb140941c253801d35d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0077
+      objectReference: {fileID: 0}
     - target: {fileID: 6745225943748412650, guid: dfe34c5cb896fb140941c253801d35d8,
         type: 3}
       propertyPath: m_RootOrder
@@ -665,6 +672,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118253528387749030, guid: dfe34c5cb896fb140941c253801d35d8,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe34c5cb896fb140941c253801d35d8, type: 3}
 --- !u!4 &4190157509130112540 stripped

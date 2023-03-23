@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda16838d691d5644abbd45ebc11750f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3.5
   arrowSprite: {fileID: 5459541245239821811}
   damage: 3
   Firing: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 0.3125}
+    oldSize: {x: 0.46875, y: 0.15625}
     newSize: {x: 0.9375, y: 0.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
