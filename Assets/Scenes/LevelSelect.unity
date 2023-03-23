@@ -1986,6 +1986,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5366180174146208131, guid: f005047d80a381d499227db837f7139a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6512356542108779538, guid: f005047d80a381d499227db837f7139a,
         type: 3}
       propertyPath: weapons.Array.data[0]
