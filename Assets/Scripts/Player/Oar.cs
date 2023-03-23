@@ -14,6 +14,7 @@ public class Oar : MonoBehaviour
     public Animator animator; // weapons' animators
 
     public PlayerWeaponParent wp;
+    public GameObject crossbow;
 
     public void ResetIsAttacking()
     { IsAttacking = false; }
@@ -30,7 +31,7 @@ public class Oar : MonoBehaviour
 
     public void Attack()
     {
-        if (attackBlocked)
+        if (attackBlocked || crossbow.activeInHierarchy)
             return;
         animator.SetTrigger("Attack");
         attackBlocked = true;
