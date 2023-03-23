@@ -626,7 +626,7 @@ MonoBehaviour:
   Slider: {fileID: 138899997354498622}
   Low: {r: 0.5471698, g: 0.11098256, b: 0.11098256, a: 1}
   High: {r: 0.22414559, g: 0.6886792, b: 0.2884342, a: 1}
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: 0.7, z: 0}
 --- !u!1 &8607052046962784338
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +726,6 @@ MonoBehaviour:
   maxSpeed: 1
   acceleration: 20
   deacceleration: 200
-  isPlayer: 0
   currentSpeed: 0
 --- !u!114 &8607052046962784343
 MonoBehaviour:

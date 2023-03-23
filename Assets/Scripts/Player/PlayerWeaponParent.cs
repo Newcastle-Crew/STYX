@@ -65,5 +65,4 @@ public class PlayerWeaponParent : MonoBehaviour
         Ranged.SetActive(false);
         Melee.SetActive(true);
     }
-
 }

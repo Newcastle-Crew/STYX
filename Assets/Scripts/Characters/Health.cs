@@ -7,17 +7,15 @@ using UnityEngine.Events;
 
 // using these tuts: https://youtube.com/playlist?list=PLcRSafycjWFcwCxOHnc83yA0p4Gzx0PTM
 // also using this tutorial: https://youtu.be/gbFBWxtpgpQ
+// and this one: https://youtu.be/v1UGTTeQzbo
 
 public class Health : MonoBehaviour
 {
     [SerializeField] public int currentHealth, maxHealth;
-
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
-
     public GameObject cb; // cannonballs
-
+    public HealthbarBehaviour healthBar; // enemies' healthbars.
     [SerializeField] public bool isDead = false;
-
     public GameObject enemy; // spawns enemies
 
     public void Spawn()
@@ -32,11 +30,12 @@ public class Health : MonoBehaviour
 
     public bool IsAlive() // keeps track of enemies' living status for the wave spawner
     {
-        if (currentHealth >= 1)
-            return true;
-        else
-            return false;
+        if (currentHealth >= 1) return true;
+        else return false;
     }
+
+    private void Update() // updates enemy health bars to show the correct fill and colour
+    { healthBar.SetHealth(currentHealth, maxHealth); }
 
     public void GetHit(int amount, GameObject sender)
     {
@@ -46,11 +45,10 @@ public class Health : MonoBehaviour
             return;
 
         currentHealth -= amount;
+        healthBar.SetHealth(currentHealth, maxHealth);
 
         if(currentHealth > 0)
-        {
-            OnHitWithReference?.Invoke(sender);
-        }
+        { OnHitWithReference?.Invoke(sender); }
         else
         {
             OnDeathWithReference?.Invoke(sender);
@@ -62,13 +60,9 @@ public class Health : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<cannonballScript>() != null)
-        {
-            WeBall();
-        }
+        { WeBall(); }
     }
 
-    public void WeBall()
-    {
-        GetHit(100, cb); // cannonball does 100 damage on hit. Cyoar!
-    }
+    public void WeBall() // cannonball does 100 damage on hit. Cyoar!
+    { GetHit(100, cb); }
 }

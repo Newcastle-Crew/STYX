@@ -40,9 +40,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
 
         if (currentHealth > 0)
-        {
-            OnHitWithReference?.Invoke(sender);
-        }
+        { OnHitWithReference?.Invoke(sender); }
         else
         {
             OnDeathWithReference?.Invoke(sender);

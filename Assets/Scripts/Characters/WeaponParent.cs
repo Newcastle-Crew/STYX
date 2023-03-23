@@ -75,10 +75,9 @@ public class WeaponParent : MonoBehaviour
         {
             //Debug.Log(collider.name);
             PlayerHealth health;
+
             if(health = collider.GetComponent<PlayerHealth>())
-            {
-                health.GetHit(1, transform.parent.gameObject);
-            }
+            { health.GetHit(1, transform.parent.gameObject); }
         }
     }
 }
