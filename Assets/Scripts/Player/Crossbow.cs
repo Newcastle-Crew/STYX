@@ -1,6 +1,8 @@
+# region 'Using' information
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#endregion
 
 public class Crossbow : MonoBehaviour
 {
@@ -9,9 +11,15 @@ public class Crossbow : MonoBehaviour
     float timeBetween; // time between crossbow shots
     public float startTimeBetween; // begins a countdown between shots. Change in inspector.
 
+    public PlayerWeaponParent wp;
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) // pressing 1 on keyboard switches weapons
+        {
+            wp.SwitchToMelee();
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && timeBetween <= 0) // when left-click is pressed while player is able to fire
         {
             ShootArrow();
