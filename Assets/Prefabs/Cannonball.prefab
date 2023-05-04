@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1111060246488720005}
   - component: {fileID: 1111060246488720004}
-  - component: {fileID: 1111060246488720026}
   - component: {fileID: 1111060246488720027}
+  - component: {fileID: 1111060246488720026}
   - component: {fileID: 1111060246488720024}
   - component: {fileID: -4988895256566857529}
   m_Layer: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1111060246488720026
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111060246488720007}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.099999994
 --- !u!50 &1111060246488720027
 Rigidbody2D:
   serializedVersion: 4
@@ -125,6 +109,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &1111060246488720026
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111060246488720007}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.099999994
 --- !u!114 &1111060246488720024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   ballSprite: {fileID: 0}
-  biggerBalls: 0
+  biggerBalls: 1
   scaleFactor: 1.75
   Blasting: 0
 --- !u!82 &-4988895256566857529

@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: -2339455859428967186}
   m_Layer: 11
   m_Name: Enemy Sculptor
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 8607052046962784338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8607052048804425068}
@@ -709,7 +709,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.12781066, y: 0.2556213}
+  m_Size: {x: 0.20242187, y: 0.9776982}
   m_Direction: 0
 --- !u!114 &8607052046962784331
 MonoBehaviour:
@@ -772,6 +772,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
+  har: {fileID: 1111060246488720007, guid: baf71109d2fdfb24ab4711d17e578597, type: 3}
   healthBar: {fileID: 1910332317410555182}
   isDead: 0
   enemy: {fileID: 8607052046962784338}
@@ -787,7 +788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372907160f27cc0459a7d1645402f8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSculptor: 1
 --- !u!95 &8607052046962784330
 Animator:
   serializedVersion: 4
@@ -822,7 +822,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.14570485, y: 0.29140973}
+  m_Size: {x: 0.26288253, y: 1.0659891}
   m_Direction: 0
 --- !u!114 &5293060437537452106
 MonoBehaviour:

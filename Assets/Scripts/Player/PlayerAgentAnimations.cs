@@ -16,9 +16,9 @@ public class PlayerAgentAnimations : MonoBehaviour
         Vector3 scale = transform.localScale;
 
         if (lookDirection.x > 0)
-        { scale.x = 2; }
+        { scale.x = 1; }
         else if (lookDirection.x < 0)
-        { scale.x = -2; }
+        { scale.x = -1; }
 
         transform.localScale = scale;   
     }

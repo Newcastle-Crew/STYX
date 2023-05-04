@@ -344,7 +344,7 @@ Transform:
   m_GameObject: {fileID: 3937622854400021537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3937622855158841631}
@@ -390,7 +390,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.12781066, y: 0.2556213}
+  m_Size: {x: 0.14783433, y: 0.25430563}
   m_Direction: 0
 --- !u!114 &3937622854400021560
 MonoBehaviour:
@@ -453,6 +453,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
+  har: {fileID: 1111060246488720007, guid: baf71109d2fdfb24ab4711d17e578597, type: 3}
   healthBar: {fileID: 7395163158016000248}
   isDead: 0
   enemy: {fileID: 3937622854400021537}
@@ -468,7 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372907160f27cc0459a7d1645402f8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSculptor: 0
 --- !u!95 &3937622854400021561
 Animator:
   serializedVersion: 4
@@ -502,8 +502,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.14570485, y: 0.29140973}
+  m_Offset: {x: 0.0043882355, y: 0}
+  m_Size: {x: 0.11464794, y: 0.63011146}
   m_Direction: 0
 --- !u!114 &622588903922932793
 MonoBehaviour:
