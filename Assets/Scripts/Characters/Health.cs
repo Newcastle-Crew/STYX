@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     [SerializeField] public int currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
     public GameObject cb; // cannonballs
+    public GameObject har; // harpoons
     public HealthbarBehaviour healthBar; // enemies' healthbars.
     [SerializeField] public bool isDead = false;
     public GameObject enemy; // spawns enemies
@@ -61,8 +62,14 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<cannonballScript>() != null)
         { WeBall(); }
+
+        if (collision.gameObject.GetComponent<HarpoonScript>() != null)
+        { WePoon(); }
     }
 
     public void WeBall() // cannonball does 100 damage on hit. Cyoar!
     { GetHit(100, cb); }
+
+    public void WePoon () // harpoon does 4 damage on hit. Oohoo!
+    { GetHit(1, har); }
 }

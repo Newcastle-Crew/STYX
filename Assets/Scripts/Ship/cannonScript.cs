@@ -28,7 +28,7 @@ public class cannonScript : MonoBehaviour
     public float startTimeBetween; // begins a countdown between shots
 
     float cannonZ = 0; // The cannon's Z rotation
-    float lowcannonZ = 180; // The cannon's Z rotationW
+    float lowcannonZ = 180; // The cannon's Z rotation
     private bool readyToGo; // Checks for player in the right position (inside trigger box).
 
     float timeUntilShoot = 5f; // unused; see first TODO
