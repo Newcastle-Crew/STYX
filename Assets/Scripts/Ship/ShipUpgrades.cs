@@ -10,9 +10,6 @@ public class ShipUpgrades : MonoBehaviour
     public GameObject bonusCannon1; // upper row, middle cannon. 
     public GameObject bonusCannon2; // lower row, middle cannon.
 
-    public GameObject ballIcon; // icon showing that the cannons have the big balls upgrade
-    public GameObject splitIcon; // icon showing that the cannons have the split shot upgrade
-
     public cannonballScript cannonballs;
     public cannonScript cannonType;
 
@@ -47,8 +44,6 @@ public class ShipUpgrades : MonoBehaviour
     { 
         cannonballs.biggerBalls = true;
         cannonType.splitShot = false;
-        ballIcon.SetActive(true);
-        splitIcon.SetActive(false);
         DataManager.Instance.BigBalls = true;
         DataManager.Instance.EngorgeBalls();
         DataManager.Instance.SaveGame();
@@ -58,8 +53,6 @@ public class ShipUpgrades : MonoBehaviour
     {
         cannonType.splitShot = true;
         cannonballs.biggerBalls = false;
-        splitIcon.SetActive(true);
-        ballIcon.SetActive(false);
         DataManager.Instance.SplitShot = true;
         DataManager.Instance.SplitShots();
         DataManager.Instance.SaveGame();

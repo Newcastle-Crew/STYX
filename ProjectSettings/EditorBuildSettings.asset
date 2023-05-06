@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: b44f81e0eb8ca9d4da5395db7ee5c799
-  - enabled: 0
-    path: Assets/Scenes/WestyScene.unity
-    guid: 413398398e529f646b85aa2342aef766
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: f119a2bce3a425844ae5860cf8519467
   m_configObjects: {}

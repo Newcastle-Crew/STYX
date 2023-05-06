@@ -29,7 +29,7 @@ public class PlayerWeaponParent : MonoBehaviour
     {
         Vector3 pointerPosition = GetComponentInParent<PlayerInput>().GetPointerInput(); // pointer position is the cursor's location as used by PlayerInput script
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(pointerPosition); // gets the cursor's position relative to the camera
-        crosshair.transform.position = screenPosition; // crosshair follows pointer position     
+        crosshair.transform.position = screenPosition; // crosshair follows pointer position
 
         Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
         transform.right = direction;

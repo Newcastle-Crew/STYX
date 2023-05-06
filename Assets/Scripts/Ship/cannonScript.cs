@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 #endregion
 
 public class cannonScript : MonoBehaviour
@@ -33,8 +34,23 @@ public class cannonScript : MonoBehaviour
 
     float timeUntilShoot = 5f; // unused; see first TODO
 
+    public Slider Slider;
+    public Color Low;
+    public Color High;
+    public Vector3 Offset;
+    public GameObject self;
+
     void Start()
     { timeBetween = startTimeBetween; } // will likely be removed, best for automatic fire
+
+    public void ProgressBar()
+    {
+        Slider.gameObject.SetActive(timeBetween < startTimeBetween && timeBetween > 0 && self.activeInHierarchy);
+        Slider.value = timeBetween;
+        Slider.maxValue = 5; // set to the same value as the startTimeBetween
+
+        Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
+    }
 
     void Rotate() // rotates the cannon to left, right, or back to middle
     {
@@ -61,6 +77,10 @@ public class cannonScript : MonoBehaviour
     
     void Update()
     {
+        Slider.transform.position = Camera.main.WorldToScreenPoint(transform.position + Offset); // keep progress bar above harpoon gun
+
+        ProgressBar(); // update the progress bar every frame so it's accurate
+
         if (splitShot == true)
         {
             if (readyToGo == true && Input.GetKeyDown(KeyCode.E) && timeBetween <= 0)

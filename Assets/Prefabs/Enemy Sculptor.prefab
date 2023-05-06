@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6869454298827564936}
   - component: {fileID: 138899997354498622}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5569950644458269039}
   - component: {fileID: 8393707378282761697}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7351418149443253276}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SteeringBehaviours
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2300007044938632046}
   - component: {fileID: 2305044583541417292}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ContextSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8142771101037623620}
   - component: {fileID: 4733066610099065682}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ObstacleAvoidance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3508749696534538032}
   - component: {fileID: 3263996546308338829}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ObstacleDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9209712735908909009}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6651685875003894999}
   - component: {fileID: 6176040336227962196}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SeekBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 745352785082364663}
   - component: {fileID: 8084861703806695761}
   - component: {fileID: 1418527568588451526}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 7468343659934075240}
   - component: {fileID: 3356404694371102630}
   - component: {fileID: 1910332317410555182}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,9 +1082,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 2140908111
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d4b5e0d930cd0c249ba53f2f4961c3d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1183,7 +1183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8607052048291429113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0037, y: 0.0124, z: 0}
+  m_LocalPosition: {x: 0.132, y: 0.061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1219,7 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8607052048804425068}
   - component: {fileID: 8607052048804425071}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,9 +1279,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 2140908111
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: debbfb59ab0bc824697848392246a297, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 4657065537009300716}
   - component: {fileID: 6602015646733560728}
   - component: {fileID: 4050090240344857635}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
