@@ -77,10 +77,10 @@ public class WeaponParent : MonoBehaviour
             PlayerHealth health;
             TrapdoorHealth tHealth;
 
-            if(health = collider.GetComponent<PlayerHealth>())
+            if(health = collider.GetComponent<PlayerHealth>()) // enemies can do damage to player
             { health.GetHit(1, transform.parent.gameObject); }
 
-            if (tHealth = collider.GetComponent<TrapdoorHealth>())
+            if (tHealth = collider.GetComponent<TrapdoorHealth>()) // enemies can do damage to trapdoor
             { tHealth.GetHit(1, transform.parent.gameObject); }
         }
     }

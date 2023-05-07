@@ -70,6 +70,6 @@ public class Health : MonoBehaviour
     public void WeBall() // cannonball does 100 damage on hit. Cyoar!
     { GetHit(100, cb); }
 
-    public void WePoon () // harpoon does 4 damage on hit. Oohoo!
+    public void WePoon () // harpoon does 1 damage on hit. It's something!
     { GetHit(1, har); }
 }

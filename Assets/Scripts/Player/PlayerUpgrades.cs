@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerUpgrades : MonoBehaviour
 {
     public PlayerAgentMover playerSpeed; // Set via inspector - makes it so only the player gets this upgrade
+    public TrapdoorHealth obols;
 
     #region UI stuff
     private int speedUpgrades = 0; // keeps track of the number of speed upgrades the player has
@@ -52,8 +53,9 @@ public class PlayerUpgrades : MonoBehaviour
 
     public void UpgradeSpeed()
     {
-        if (speedUpgrades < 3) // no more than 3 speed upgrades
+        if (speedUpgrades < 3 && DataManager.Instance.TotalObols >= 3) // no more than 3 speed upgrades. each speed upgrade costs 3 obols
         {
+            DataManager.Instance.TotalObols -= 3; // take 3 obols
             speedUpgrades++; // adds 1 to the upgrade tracker
             DataManager.Instance.SpeedUpgrades = speedUpgrades; // keeps the DataManager updated
             DataManager.Instance.Acceleration += 2.5f; // upgrades Acceleration in a stays-between-scenes way as it's upgraded here, too

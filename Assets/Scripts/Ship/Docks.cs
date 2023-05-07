@@ -8,6 +8,7 @@ public class Docks : MonoBehaviour
 {
     [SerializeField] private GameObject DockBlocker;
     [SerializeField] private BattleSystem battleSystem;
+    public TrapdoorHealth trapdoor;
 
     private void Start()
     {
@@ -23,5 +24,6 @@ public class Docks : MonoBehaviour
     private void BattleSystem_OnBattleEnded(object sender, System.EventArgs e)
     {
         DockBlocker.SetActive(false);
+        trapdoor.EndLevel();
     }
 }

@@ -16,7 +16,46 @@ public class LevelInfo : MonoBehaviour
     [SerializeField] Button L4;
     [SerializeField] Button L5;
     [SerializeField] Button L6;
-    //[SerializeField] Button L7;
+
+    private int levelsUnlocked;
+
+    public GameObject level2Button; // button to access level 2
+    public GameObject level3Button; // ditto, level 3
+    public GameObject level4Button; // ditto, level 4
+    public GameObject level5Button; // ditto, level 5
+
+    private void Start()
+    {
+        levelsUnlocked = DataManager.Instance.LevelsComplete;
+
+        switch (levelsUnlocked)
+        {
+            case 1:
+                level2Button.SetActive(true);
+                break;
+            case 2:
+                level2Button.SetActive(true);
+                level3Button.SetActive(true);
+                break;
+            case 3:
+                level2Button.SetActive(true);
+                level3Button.SetActive(true);
+                level4Button.SetActive(true);
+                break;
+            case 4:
+                level2Button.SetActive(true);
+                level3Button.SetActive(true);
+                level4Button.SetActive(true);
+                level5Button.SetActive(true);
+                break;
+            case 5:
+                level2Button.SetActive(true);
+                level3Button.SetActive(true);
+                level4Button.SetActive(true);
+                level5Button.SetActive(true);
+                break;
+        } // shows buttons depending on how many levels have been beaten
+    }
 
     public void Back2Normal()
     { DescText.text = "Level Select"; }
@@ -48,7 +87,4 @@ public class LevelInfo : MonoBehaviour
 
     public void L6Click()
     { DescText.text = "Here be Hydras"; }
-
-    //public void L7Click() // L7 is currently hidden to avoid giving ourselves extra work
-    //{ DescText.text = "L7 Todo"; }
 }

@@ -15,20 +15,34 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance { get; private set; }
 
+    #region Privates
+
+    int levelsComplete;
+    int totalObols;
+
+    #endregion
+
     #region Publics 
-    public int Level1Obols { get; set; } = 0; // number of obols (coins) the player got in level 1
+
+    public int TotalObols { get; set; } = 0; // number of obols the player has. used to buy upgrades
     public int SpeedUpgrades { get; set; } = 0; // number of speed upgrades the player has unlocked
     public int HealthUpgrades { get; set; } = 0; // number of health upgrades the player has unlocked
-    public int MaxHealth { get; set; } = 10; // number of health upgrades the player has unlocked
+    public int MaxHealth { get; set; } = 10; // amount of health the player has
+    public int LevelsComplete { get; set; } = 0; // tracks the number of levels completed for level select screen and obol tracking purposes
+    public int Level1Obols { get; set; } = 0; // number of obols the player got in level 1
+    public int Level2Obols { get; set; } = 0; // number of obols the player got in level 2
+    public int Level3Obols { get; set; } = 0; // number of obols the player got in level 3
+    public int Level4Obols { get; set; } = 0; // number of obols the player got in level 4
+    public int Level5Obols { get; set; } = 0; // number of obols the player got in level 5
 
     public float Acceleration { get; set; } = 50f; // player's acceleration value, tracked for speed upgrades
     public float MaxSpeed { get; set; } = 2f; // ditto above, max speed
 
-    public bool Level1Complete { get; set; } // checks for the completion of the level
     public bool CerberusUnlocked { get; set; } // whether or not the player unlocked cerberus
-    public bool BonusCannons { get; set; } // tracks the number of extra cannons the player has unlocked
+    public int BonusCannons { get; set; } // tracks the number of extra cannons the player has unlocked
     public bool BigBalls { get; set; } // tracks the 'Big Balls' cannon upgrade
-    public bool SplitShot { get; set; } // tracks the 'Big Balls' cannon upgrade
+    public bool SplitShot { get; set; } // tracks the 'Split Shot' cannon upgrade
+
     #endregion
 
     public void Awake()
@@ -47,7 +61,7 @@ public class DataManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveData.dat");
 
-        PlayerData data = new PlayerData(Level1Obols, Level1Complete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed, HealthUpgrades, MaxHealth);
+        PlayerData data = new PlayerData(Level1Obols, Level2Obols, Level3Obols, Level4Obols, Level5Obols, TotalObols, LevelsComplete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed, HealthUpgrades, MaxHealth);
         
         bf.Serialize(file, data);
         file.Close();
@@ -63,7 +77,12 @@ public class DataManager : MonoBehaviour
             PlayerData data = (PlayerData)bf.Deserialize(file);
 
             Level1Obols = data.Level1Obols;
-            Level1Complete = data.Level1Complete;
+            Level2Obols = data.Level2Obols;
+            Level3Obols = data.Level3Obols;
+            Level4Obols = data.Level4Obols;
+            Level5Obols = data.Level5Obols;
+            TotalObols = data.TotalObols;
+            LevelsComplete = data.LevelsComplete;
             CerberusUnlocked = data.CerberusUnlocked;
             BonusCannons = data.BonusCannons;
             BigBalls = data.BigBalls;
@@ -73,14 +92,13 @@ public class DataManager : MonoBehaviour
             MaxSpeed = data.MaxSpeed;
             HealthUpgrades = data.HealthUpgrades;
             MaxHealth = data.MaxHealth;
-
             file.Close();
         }
     }
 
     public void GiveExtraCannons()
     {
-        BonusCannons = true;
+        BonusCannons++;
         SaveGame();
     }
 
@@ -105,22 +123,37 @@ public class PlayerData
     #region Obol counters
 
     /// <summary>
-    /// These ints are used in LevelLoader.cs to show the unlocked obols on the level select screen.
+    /// These ints are used in LevelLoader.cs to show the unlocked obols on the level select screen, and prevent spamming level 1 to get all upgrades.
     /// </summary>
 
     private int level1Obols;
     public int Level1Obols => level1Obols;
+
+    private int level2Obols;
+    public int Level2Obols => level2Obols;
+
+    private int level3Obols;
+    public int Level3Obols => level3Obols;
+
+    private int level4Obols;
+    public int Level4Obols => level4Obols;
+
+    private int level5Obols;
+    public int Level5Obols => level5Obols;
+
+    private int totalObols;
+    public int TotalObols => totalObols;
 
     #endregion
 
     #region Completion bools
 
     /// <summary>
-    /// These bool-y bad boys are used in LevelLoader.cs to show the next level on the level select screen when the previous level has been completed.
+    /// These ints are used in LevelInfo.cs to show the next level on the level select screen when the previous level has been completed.
     /// </summary>
 
-    private bool level1Complete;
-    public bool Level1Complete => level1Complete;
+    private int levelsComplete;
+    public int LevelsComplete => levelsComplete;
 
     #endregion
 
@@ -132,8 +165,8 @@ public class PlayerData
     private bool cerberusUnlocked;
     public bool CerberusUnlocked => cerberusUnlocked;
 
-    private bool bonusCannons;
-    public bool BonusCannons => bonusCannons;
+    private int bonusCannons;
+    public int BonusCannons => bonusCannons;
 
     private bool bigBalls;
     public bool BigBalls => bigBalls;
@@ -157,10 +190,15 @@ public class PlayerData
     public int MaxHealth => maxHealth;
     #endregion
 
-    public PlayerData(int l1o, bool l1c, bool dogN, bool cannons, bool balls, bool split, int speed, float acc, float maxspeed, int uhealth, int mhealth)
+    public PlayerData(int l1o, int l2o, int l3o, int l4o, int l5o, int to, int lc, bool dogN, int cannons, bool balls, bool split, int speed, float acc, float maxspeed, int uhealth, int mhealth)
     {
         level1Obols = l1o;
-        level1Complete = l1c;
+        level2Obols = l2o;
+        level3Obols = l3o;
+        level4Obols = l4o;
+        level5Obols = l5o;
+        totalObols = to;
+        levelsComplete = lc;
         cerberusUnlocked = dogN;
         bonusCannons = cannons;
         bigBalls = balls;

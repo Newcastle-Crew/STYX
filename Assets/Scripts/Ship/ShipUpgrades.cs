@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ShipUpgrades : MonoBehaviour
 {
+    private int cannonsUnlocked;
     public GameObject bonusCannon1; // upper row, middle cannon. 
     public GameObject bonusCannon2; // lower row, middle cannon.
 
@@ -22,22 +23,27 @@ public class ShipUpgrades : MonoBehaviour
 
         DataManager.Instance.LoadGame();
 
-        if (DataManager.Instance.BonusCannons == true) // only adds the bonus cannons to the boat if the DataManager says so
-        { BonusCannons(); }
-
-        if(DataManager.Instance.BigBalls == true)
+        if (DataManager.Instance.BigBalls == true)
         { BiggerBalls(); }
 
         if (DataManager.Instance.SplitShot == true)
         { SplitShots(); }
+
+        switch (DataManager.Instance.BonusCannons)
+        {
+            case 1:
+                bonusCannon1.SetActive(true);
+                break;
+            case 2:
+                bonusCannon1.SetActive(true);
+                bonusCannon2.SetActive(true);
+                break;
+        }
     }
 
     public void BonusCannons()
     {
-        bonusCannon1.SetActive(true);
-        bonusCannon2.SetActive(true);
-        DataManager.Instance.BonusCannons = true; // keeps this 'true'-ness true between scenes
-        DataManager.Instance.SaveGame(); // saves the game
+        DataManager.Instance.BonusCannons++;
     }
 
     public void BiggerBalls()
