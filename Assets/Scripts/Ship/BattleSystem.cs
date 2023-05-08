@@ -70,7 +70,6 @@ public class BattleSystem : MonoBehaviour
             {
                 state = State.BattleOver;
                 OnBattleEnded?.Invoke(this, EventArgs.Empty);
-                Debug.Log("Level Complete");
             }
         }
     }

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   agentColliderSize: 0.6
-  showGizmo: 1
+  showGizmo: 0
 --- !u!1 &2765169896824094109
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3937622855689148043}
   - component: {fileID: 3937622855689148040}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: WeaponParent
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRechedThreshold: 0.5
-  showGizmo: 1
+  showGizmo: 0
 --- !u!1 &4627343801844052430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,4 +1368,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7894b1b242ecb439dbe8767936a614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmos: 1
+  showGizmos: 0

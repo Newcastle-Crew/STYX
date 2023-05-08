@@ -22,6 +22,19 @@ public class PlayerHealth : MonoBehaviour
         isDead = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            HurtMe();
+        }
+    }
+
+    public void HurtMe()
+    {
+        currentHealth -= 1;
+    }
+
     public bool IsAlive() // keeps track of enemies' living status for the wave spawner
     {
         if (currentHealth >= 1)
@@ -34,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead)
             return;
-        if (sender.layer == gameObject.layer) // stops player from hurting themselves & enemy friendly fire
+        if (sender.layer == gameObject.layer) // stops player from hurting themselves
             return;
 
         currentHealth -= amount;

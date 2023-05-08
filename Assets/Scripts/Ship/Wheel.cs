@@ -6,33 +6,54 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
+    #region Irrelevants
     private bool readyToGo; // Checks for player in the right position (inside trigger box).
-    Animator anim; // for doing the animation when the wheel is used
+    Animator anim; // wheel's animator
+    public Animator shipAnim; // attached to the moveThis game object. ship's animator
+    public BoxCollider2D mover; // the wheel's IsTrigger boxcollider that lets players move the boat
+    public GameObject battleStarter; // the battle starting box. don't start the fight til the boat is middled!
+
+    public enum BoatState
+    {
+        Down,
+        Mid,
+        Up
+    }
+
+    private BoatState currentBoatState;
+
+    public GameObject dock; // dock that player uses to exit level
+    public GameObject moveThis; // physical object that the boat n other stuff is attached to for moving purposes
+    #endregion
 
     private void Start()
     {
-        anim = GetComponent<Animator>();       
+        anim = GetComponent<Animator>(); // wheel animator. make sure it's attached to the actual wheel
+        currentBoatState = BoatState.Down; // boat starts near the dock
     }
 
-    // TODO lifted from cannonScript - should ideally be moved into a parent class
     void Update()
     {
-        if (readyToGo == true)
+        if (readyToGo == true) // if player is in the 'interact box'
         {
-            // TODO iterate over to avoid duplicate if statement
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)) // and presses 'E'
             {
-                MoveShipDown();               
+                switch (currentBoatState)
+                {
+                    case BoatState.Down:
+                        MoveShipMiddle();
+                        break;
+                    case BoatState.Mid:
+                        MoveShipUp();
+                        break;
+                    case BoatState.Up:
+                        MoveShipDown();
+                        break;
+                }
+
+                battleStarter.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                MoveShipUp();
-            }
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                MoveShipCenter();
-            }
-        }       
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,17 +69,53 @@ public class Wheel : MonoBehaviour
     }
 
     private void MoveShipUp()
-    { Debug.Log("MoveShipUp");
+    {
+        currentBoatState = BoatState.Up;
         anim.Play("WheelMove");
-    } // TODO: actually move ship up & have a bool for the ship being 'up'
+        shipAnim.Play("ShipMovingUp");
+        moveThis.transform.position = new Vector3(-3.6f, -4.087925f, 0);
+    } 
 
     private void MoveShipDown()
-    { Debug.Log("MoveShipDown");
-        anim.Play("WheelMove");
-    } // TODO: actually move ship down & have a bool for the ship being 'down'
+    {
+        if (currentBoatState == BoatState.Up)
+        {
+            shipAnim.Play("ShipWacky");
+        }
+        else if (currentBoatState == BoatState.Mid)  // this one should only play if the player is in the middle when the level ends
+        {
+            shipAnim.Play("ShipMovingDown");
+        }
+        else if (currentBoatState == BoatState.Down)
+            return;
 
-    private void MoveShipCenter()
-    { Debug.Log("MoveShipCenter");
+        currentBoatState = BoatState.Down;
         anim.Play("WheelMove");
-    } // TODO: actually move ship down & & have a bool for the ship being 'centred'
+
+        moveThis.transform.position = new Vector3(-3.6f, -4.087925f, 0);
+    } 
+
+    private void MoveShipMiddle()
+    {
+        if (currentBoatState == BoatState.Up)
+        {
+            shipAnim.Play("MovingShipMid2");
+        }
+        else if (currentBoatState == BoatState.Down)
+        {
+            shipAnim.Play("MovingShipMid1");
+        }
+
+        currentBoatState = BoatState.Mid;
+        anim.Play("WheelMove");
+
+        moveThis.transform.position = new Vector3(-3.6f, -5.58f, 0);
+    }
+
+    public void LevelFinished()
+    {
+        MoveShipDown(); // move ship down, to where the dock is
+        mover.enabled = false; // no more ship moving
+        dock.SetActive(true); // dock appears
+    }
 }

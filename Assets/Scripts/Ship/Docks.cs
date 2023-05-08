@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class Docks : MonoBehaviour
 {
-    [SerializeField] private GameObject DockBlocker;
+    [SerializeField] private GameObject DockBlocker, Dock;
     [SerializeField] private BattleSystem battleSystem;
     public TrapdoorHealth trapdoor;
+    public Wheel wheelyGood;
 
     private void Start()
     {
@@ -19,11 +20,14 @@ public class Docks : MonoBehaviour
     private void BattleSystem_OnBattleStarted(object sender, System.EventArgs e)
     {
         DockBlocker.SetActive(true);
+        Dock.SetActive(false);
     }
 
     private void BattleSystem_OnBattleEnded(object sender, System.EventArgs e)
     {
         DockBlocker.SetActive(false);
-        trapdoor.EndLevel();
+        Dock.SetActive(true);
+        trapdoor.EndLevel(); // adds obols to the total and unlocks next level
+        wheelyGood.LevelFinished(); // moves the boat to the bottom and stops player from moving it anymore
     }
 }

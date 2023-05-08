@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 #endregion
 
 public class TrapdoorHealth : MonoBehaviour
@@ -97,6 +98,37 @@ public class TrapdoorHealth : MonoBehaviour
 
     public void EndLevel()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        switch (sceneName)
+        {
+            case "GameScene":
+                if (DataManager.Instance.LevelsComplete < 1) // if the player has never beaten a level
+                { DataManager.Instance.LevelsComplete = 1; } // then they've now beaten level 1
+                DataManager.Instance.SaveGame(); // saves the game
+                break;
+            case "Level2":
+                if (DataManager.Instance.LevelsComplete < 2)
+                { DataManager.Instance.LevelsComplete = 2; }
+                DataManager.Instance.SaveGame();
+                break;
+            //case "Level3":
+            //    if (DataManager.Instance.LevelsComplete < 3)
+            //    { DataManager.Instance.LevelsComplete = 3; }
+            //    DataManager.Instance.SaveGame();
+            //    break;
+            //case "Level4":
+            //    if (DataManager.Instance.LevelsComplete < 4)
+            //    { DataManager.Instance.LevelsComplete = 4; }
+            //    DataManager.Instance.SaveGame();
+            //    break;
+            //case "Level5":
+            //    if (DataManager.Instance.LevelsComplete < 5)
+            //    { DataManager.Instance.LevelsComplete = 5; }
+            //    DataManager.Instance.SaveGame();
+            //    break;
+        }
+
         DataManager.Instance.SaveGame();
         thisLevelCoins += totalCoins;
     }

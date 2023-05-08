@@ -23,6 +23,7 @@ public class LevelInfo : MonoBehaviour
     public GameObject level3Button; // ditto, level 3
     public GameObject level4Button; // ditto, level 4
     public GameObject level5Button; // ditto, level 5
+    public GameObject thatIsAll; // thanks for playing message
 
     private void Start()
     {

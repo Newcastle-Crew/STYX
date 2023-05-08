@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerUpgrades : MonoBehaviour
 {
     public PlayerAgentMover playerSpeed; // Set via inspector - makes it so only the player gets this upgrade
-    public TrapdoorHealth obols;
+    public TrapdoorHealth obols; // set via inspector - 
 
     #region UI stuff
     private int speedUpgrades = 0; // keeps track of the number of speed upgrades the player has
