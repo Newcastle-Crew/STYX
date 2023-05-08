@@ -23,7 +23,7 @@ public class LevelInfo : MonoBehaviour
     public GameObject level3Button; // ditto, level 3
     public GameObject level4Button; // ditto, level 4
     public GameObject level5Button; // ditto, level 5
-    public GameObject thatIsAll; // thanks for playing message
+    public GameObject level6Button; // hydra
 
     private void Start()
     {
@@ -32,28 +32,32 @@ public class LevelInfo : MonoBehaviour
         switch (levelsUnlocked)
         {
             case 1:
-                level2Button.SetActive(true);
+                level2Button.SetActive(true); // if level 1 beaten, show level 2
                 break;
-            case 2:
-                level2Button.SetActive(true);
-                level3Button.SetActive(true);
-                break;
-            case 3:
+            case 2: // if level 2 beaten, show level 3 and 4
                 level2Button.SetActive(true);
                 level3Button.SetActive(true);
                 level4Button.SetActive(true);
                 break;
-            case 4:
+            case 3: // if three levels have been beaten, show 2, 3, 4 and 5
                 level2Button.SetActive(true);
                 level3Button.SetActive(true);
                 level4Button.SetActive(true);
                 level5Button.SetActive(true);
                 break;
-            case 5:
+            case 4: // if four levels have been beaten, show them all
                 level2Button.SetActive(true);
                 level3Button.SetActive(true);
                 level4Button.SetActive(true);
                 level5Button.SetActive(true);
+                level6Button.SetActive(true);
+                break;
+            case 5: // if five levels have been beaten, show them all
+                level2Button.SetActive(true);
+                level3Button.SetActive(true);
+                level4Button.SetActive(true);
+                level5Button.SetActive(true);
+                level6Button.SetActive(true);
                 break;
         } // shows buttons depending on how many levels have been beaten
     }
@@ -78,13 +82,13 @@ public class LevelInfo : MonoBehaviour
     { DescText.text = "Sculptor Sands"; }
 
     public void L3Click()
-    { DescText.text = "Level 3 Todo"; }
+    { DescText.text = "Muddy Waters"; }
 
     public void L4Click()
-    { DescText.text = "Level 4 Todo"; }
+    { DescText.text = "Muddier Waters"; }
 
     public void L5Click()
-    { DescText.text = "L5 Todo"; }
+    { DescText.text = "The Creek"; }
 
     public void L6Click()
     { DescText.text = "Here be Hydras"; }

@@ -61,7 +61,9 @@ public class DataManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveData.dat");
 
-        PlayerData data = new PlayerData(Level1Obols, Level2Obols, Level3Obols, Level4Obols, Level5Obols, TotalObols, LevelsComplete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades, Acceleration, MaxSpeed, HealthUpgrades, MaxHealth);
+        PlayerData data = new PlayerData(Level1Obols, Level2Obols, Level3Obols, Level4Obols, Level5Obols, TotalObols,
+                                            LevelsComplete, CerberusUnlocked, BonusCannons, BigBalls, SplitShot, SpeedUpgrades,
+                                            Acceleration, MaxSpeed, HealthUpgrades, MaxHealth);
         
         bf.Serialize(file, data);
         file.Close();

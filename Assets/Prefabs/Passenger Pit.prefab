@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6849586765366324522}
   - component: {fileID: 6849586765366324516}
   - component: {fileID: 6849586765366324517}
+  - component: {fileID: 1090037853698817434}
   m_Layer: 12
   m_Name: Passenger Pit
   m_TagString: Passenger
@@ -104,6 +105,8 @@ MonoBehaviour:
   halfHealth: {fileID: 21300000, guid: b5f8350578639b743ad2a16fa65ca358, type: 3}
   threequarterHealth: {fileID: 21300000, guid: 15cdc3201785ed04c9c38cddb6a3c120, type: 3}
   fullHealth: {fileID: 21300000, guid: fbce0c1d74489cf48b7dedc2abc0c286, type: 3}
+  ObolText: {fileID: 0}
+  obolCounter: {fileID: 0}
 --- !u!61 &6849586765366324517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,3 +133,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0578668, y: 0.50738144}
   m_EdgeRadius: 0
+--- !u!114 &1090037853698817434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849586765366324521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094694e2846067041a6523089f5248e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level1Obols: 0
+  level2Obols: 0
+  level3Obols: 0
+  level4Obols: 0
+  level5Obols: 0
+  thisLevelCoins: 0

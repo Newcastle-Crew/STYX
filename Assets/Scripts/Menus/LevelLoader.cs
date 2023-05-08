@@ -17,7 +17,25 @@ public class LevelLoader : MonoBehaviour
     {
         DataManager.Instance.SaveGame();
         SceneManager.LoadScene("Level2");
-    } 
+    }
+
+    public void Level3() // Loads level 2
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void Level4() // Loads level 2
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("Level4");
+    }
+
+    public void Level5() // Loads level 2
+    {
+        DataManager.Instance.SaveGame();
+        SceneManager.LoadScene("Level5");
+    }
 
     public void LevelSelect() // Loads the level select scene
     {

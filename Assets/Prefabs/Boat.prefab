@@ -189,6 +189,7 @@ MonoBehaviour:
   battleSystem: {fileID: 0}
   trapdoor: {fileID: 4758304369095167460}
   wheelyGood: {fileID: 3877235381725643075}
+  leaver: {fileID: 2011972298769714726}
 --- !u!61 &8957804426763799416
 BoxCollider2D:
   m_ObjectHideFlags: 0

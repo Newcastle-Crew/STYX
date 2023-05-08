@@ -19,17 +19,15 @@ public class TrapdoorHealth : MonoBehaviour
     public Sprite threequarterHealth; // Displaying sprite for medium health.
     public Sprite fullHealth; // Displaying sprite for full health.
 
-    [SerializeField] TMP_Text ObolText;
-
-    public static int totalCoins; // use this for upgrades n stuff
-    public int thisLevelCoins; // find a way to add this to 
+    [SerializeField] TMP_Text ObolText; // text showing the current level's obol total in the UI.
+    public ObolCounter obolCounter; // coin counter script
 
     public void InitializeHealth(int healthValue)
     {
         currentHealth = healthValue;
         maxHealth = healthValue;
         isDead = false;
-        thisLevelCoins = 15;
+        obolCounter.thisLevelCoins = 15;
     }
 
     public bool IsAlive() // keeps track of trapdoor's health status for the wave spawner
@@ -52,32 +50,32 @@ public class TrapdoorHealth : MonoBehaviour
     {
         if(currentHealth == 0)
         {
-            thisLevelCoins = 3;
+            obolCounter.thisLevelCoins = 3;
             ObolText.text = "3";
             Destroy(gameObject);
         }
         if (currentHealth < 5)
         {
             spriteRenderer.sprite = quarterHealth;
-            thisLevelCoins = 6;
+            obolCounter.thisLevelCoins = 6;
             ObolText.text = "3";
         }
         else if (currentHealth < 10)
         {
             spriteRenderer.sprite = halfHealth;
-            thisLevelCoins = 9;
+            obolCounter.thisLevelCoins = 9;
             ObolText.text = "9";
         }
         else if (currentHealth < 15)
         {
             spriteRenderer.sprite = threequarterHealth;
-            thisLevelCoins = 12;
+            obolCounter.thisLevelCoins = 12;
             ObolText.text = "12";
         }
         else
         {
             spriteRenderer.sprite = fullHealth;
-            thisLevelCoins = 15;
+            obolCounter.thisLevelCoins = 15;
             ObolText.text = "15";
         }
     }
@@ -99,6 +97,7 @@ public class TrapdoorHealth : MonoBehaviour
     public void EndLevel()
     {
         string sceneName = SceneManager.GetActiveScene().name;
+        obolCounter.UpdateTotal();
 
         switch (sceneName)
         {
@@ -130,6 +129,5 @@ public class TrapdoorHealth : MonoBehaviour
         }
 
         DataManager.Instance.SaveGame();
-        thisLevelCoins += totalCoins;
     }
 }
