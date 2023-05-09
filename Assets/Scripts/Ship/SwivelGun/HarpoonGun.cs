@@ -15,7 +15,7 @@ public class HarpoonGun : MonoBehaviour
 
     public bool lowerPoon; // Cannons on the bottom of the boat have different rotations.
 
-    float rotSpeed = 20; // speed at which the harpoon gun rotates
+    //float rotSpeed = 20; // speed at which the harpoon gun rotates
 
     void Update() 
     {

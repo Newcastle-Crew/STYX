@@ -2475,6 +2475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9071109290806987400, guid: 1854b8c79a955cc4d992e1ac61b320f1,
         type: 3}
+      propertyPath: lowerPoon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071109290806987400, guid: 1854b8c79a955cc4d992e1ac61b320f1,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

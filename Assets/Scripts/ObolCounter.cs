@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class ObolCounter : MonoBehaviour
 {
+    #region
     public static int level1Obols;
     public static int level2Obols;
     public static int level3Obols;
@@ -15,11 +16,13 @@ public class ObolCounter : MonoBehaviour
     public static int level5Obols;
     public static int totalCoins; // use this for upgrades n stuff
     public int thisLevelCoins;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        DataManager.Instance.LoadGame();
+        DataManager.Instance.Level1Obols += level2Obols += level3Obols += level4Obols += level5Obols;
+        DataManager.Instance.SaveGame();
     }
 
     // Update is called once per frame

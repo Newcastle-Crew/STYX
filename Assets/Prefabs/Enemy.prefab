@@ -454,7 +454,7 @@ MonoBehaviour:
       m_Calls: []
   cb: {fileID: 1111060246488720007, guid: 4fa1d54aa94765840aed812e565fa4ff, type: 3}
   har: {fileID: 1111060246488720007, guid: baf71109d2fdfb24ab4711d17e578597, type: 3}
-  healthBar: {fileID: 7395163158016000248}
+  healthBar: {fileID: 8150250217250088434}
   isDead: 0
   enemy: {fileID: 3937622854400021537}
 --- !u!114 &3937622854400021563
@@ -669,6 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3937622855158841631}
   - component: {fileID: 3937622855158841628}
+  - component: {fileID: 8150250217250088434}
   m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
@@ -743,6 +744,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8150250217250088434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937622855158841630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b535e2afa1924bade8eca4624355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slider: {fileID: 7714522119574254974}
+  Low: {r: 0.54901963, g: 0.10980392, b: 0.10980392, a: 1}
+  High: {r: 0.22352941, g: 0.6901961, b: 0.2901961, a: 1}
+  Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &3937622855689148042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1049,6 @@ GameObject:
   - component: {fileID: 9193797253309839513}
   - component: {fileID: 6432877243171312086}
   - component: {fileID: 6510700528547751424}
-  - component: {fileID: 7395163158016000248}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1122,22 +1138,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7395163158016000248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4627343801844052430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84b535e2afa1924bade8eca4624355b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Slider: {fileID: 7714522119574254974}
-  Low: {r: 0.5471698, g: 0.11098256, b: 0.11098256, a: 1}
-  High: {r: 0.22414559, g: 0.6886792, b: 0.2884342, a: 1}
-  Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &4774675056565116627
 GameObject:
   m_ObjectHideFlags: 0

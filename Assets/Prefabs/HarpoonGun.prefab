@@ -645,7 +645,7 @@ MonoBehaviour:
   enemies: []
   target: {fileID: 0}
   angle: 0
-  lowerPoon: 1
+  lowerPoon: 0
 --- !u!58 &9071109290806987401
 CircleCollider2D:
   m_ObjectHideFlags: 0
