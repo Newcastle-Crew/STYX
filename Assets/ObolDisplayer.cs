@@ -13,8 +13,6 @@ public class ObolDisplayer : MonoBehaviour
 
     private void Start()
     {
-        forgeText.text = "" + DataManager.Instance.TotalObols;
-        grapevineText.text = "" + DataManager.Instance.TotalObols;
         oneObols.text = "" + DataManager.Instance.Level1Obols + " / 15";
         twoObols.text = "" + DataManager.Instance.Level2Obols + " / 15";
         threeObols.text = "" + DataManager.Instance.Level3Obols + " / 15";
@@ -22,8 +20,17 @@ public class ObolDisplayer : MonoBehaviour
         fiveObols.text = "" + DataManager.Instance.Level5Obols + " / 15";
     }
 
-    //private void Update()
-    //{
-    //    DataManager.Instance.TotalObols = 0;
-    //}
+    private void FixedUpdate()
+    {
+        forgeText.text = "" + DataManager.Instance.TotalObols;
+        grapevineText.text = "" + DataManager.Instance.TotalObols;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            DataManager.Instance.TotalObols = 20;
+        }
+    }
 }

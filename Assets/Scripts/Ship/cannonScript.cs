@@ -10,9 +10,6 @@ public class cannonScript : MonoBehaviour
     /// Made with this tutorial: https://youtu.be/SDl5YTis__k
     /// rotations & split shot were all me
 
-    // todo: find a way to show a 'countdown' on screen before the cannon shoots
-    // todo: find a way to show the 'cooldown' before the cannon is ready to shoot again
-
     #region Firepoints
     public Transform firepoint; // The exact area that the cannonball fires from.
     public Transform firepoint2; // additional firepoint, used for split shot

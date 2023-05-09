@@ -49,30 +49,34 @@ public class HealthBar : MonoBehaviour
 
     public void UpgradeHealth()
     {
-        if (healthUpgrades < 3) // no more than 3 health upgrades
+        if (DataManager.Instance.TotalObols >= 10)
         {
-            healthUpgrades++; // adds 1 to the upgrade tracker
-            DataManager.Instance.HealthUpgrades = healthUpgrades; // keeps the DataManager updated  
-            DataManager.Instance.MaxHealth += 5; // upgrades MaxHealth in a stays-between-scenes way as it's upgraded here, too   
-
-            switch (healthUpgrades) // shows the player how much they've upgraded themselves
+            if (healthUpgrades < 3) // no more than 3 health upgrades
             {
-                case 1:
-                    upgradePoint1.SetActive(true);
-                    break;
-                case 2:
-                    upgradePoint2.SetActive(true);
-                    break;
-                case 3:
-                    upgradePoint3.SetActive(true);
-                    break;
+                healthUpgrades++; // adds 1 to the upgrade tracker
+                DataManager.Instance.TotalObols -= 3;
+                DataManager.Instance.HealthUpgrades = healthUpgrades; // keeps the DataManager updated  
+                DataManager.Instance.MaxHealth += 5; // upgrades MaxHealth in a stays-between-scenes way as it's upgraded here, too   
+
+                switch (healthUpgrades) // shows the player how much they've upgraded themselves
+                {
+                    case 1:
+                        upgradePoint1.SetActive(true);
+                        break;
+                    case 2:
+                        upgradePoint2.SetActive(true);
+                        break;
+                    case 3:
+                        upgradePoint3.SetActive(true);
+                        break;
+                }
+                health.maxHealth += 5;
+                health.currentHealth = DataManager.Instance.MaxHealth; // formerly health.currentHealth = health.maxHealth;
+                DataManager.Instance.HealthUpgrades = healthUpgrades;
+                Debug.Log("Health has been upgraded: " + DataManager.Instance.HealthUpgrades);
             }
-            health.maxHealth += 5;  
-            health.currentHealth = DataManager.Instance.MaxHealth; // formerly health.currentHealth = health.maxHealth;
-            DataManager.Instance.HealthUpgrades = healthUpgrades;
-            Debug.Log("Health has been upgraded: " + DataManager.Instance.HealthUpgrades);
+            DataManager.Instance.SaveGame();
         }
-        DataManager.Instance.SaveGame();
     }
 
     private void Update()

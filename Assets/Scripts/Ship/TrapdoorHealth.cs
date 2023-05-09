@@ -19,7 +19,7 @@ public class TrapdoorHealth : MonoBehaviour
     public Sprite threequarterHealth; // Displaying sprite for medium health.
     public Sprite fullHealth; // Displaying sprite for full health.
 
-    [SerializeField] TMP_Text ObolText; // text showing the current level's obol total in the UI.
+    [SerializeField] TMP_Text ObolText; // text shows the current level's obol total in the UI.
     public ObolCounter obolCounter; // coin counter script
 
     public void InitializeHealth(int healthValue)
@@ -111,21 +111,21 @@ public class TrapdoorHealth : MonoBehaviour
                 { DataManager.Instance.LevelsComplete = 2; }
                 DataManager.Instance.SaveGame();
                 break;
-            //case "Level3":
-            //    if (DataManager.Instance.LevelsComplete < 3)
-            //    { DataManager.Instance.LevelsComplete = 3; }
-            //    DataManager.Instance.SaveGame();
-            //    break;
-            //case "Level4":
-            //    if (DataManager.Instance.LevelsComplete < 4)
-            //    { DataManager.Instance.LevelsComplete = 4; }
-            //    DataManager.Instance.SaveGame();
-            //    break;
-            //case "Level5":
-            //    if (DataManager.Instance.LevelsComplete < 5)
-            //    { DataManager.Instance.LevelsComplete = 5; }
-            //    DataManager.Instance.SaveGame();
-            //    break;
+            case "Level3":
+                if (DataManager.Instance.LevelsComplete < 3)
+                { DataManager.Instance.LevelsComplete = 3; }
+                DataManager.Instance.SaveGame();
+                break;
+            case "Level4":
+                if (DataManager.Instance.LevelsComplete < 4)
+                { DataManager.Instance.LevelsComplete = 4; }
+                DataManager.Instance.SaveGame();
+                break;
+            case "Level5":
+                if (DataManager.Instance.LevelsComplete < 5)
+                { DataManager.Instance.LevelsComplete = 5; }
+                DataManager.Instance.SaveGame();
+                break;
         }
 
         DataManager.Instance.SaveGame();

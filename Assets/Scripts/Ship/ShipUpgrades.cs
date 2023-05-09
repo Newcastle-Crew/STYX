@@ -11,6 +11,9 @@ public class ShipUpgrades : MonoBehaviour
     public GameObject bonusCannon1; // upper row, middle cannon. 
     public GameObject bonusCannon2; // lower row, middle cannon.
 
+    public GameObject splitShotIndicator;
+    public GameObject bigBallIndicator;
+
     public cannonballScript cannonballs;
     public cannonScript cannonType;
 
@@ -24,10 +27,16 @@ public class ShipUpgrades : MonoBehaviour
         DataManager.Instance.LoadGame();
 
         if (DataManager.Instance.BigBalls == true)
-        { BiggerBalls(); }
+        { 
+            BiggerBalls();
+            bigBallIndicator.SetActive(true);
+        }
 
         if (DataManager.Instance.SplitShot == true)
-        { SplitShots(); }
+        { 
+            SplitShots();
+            splitShotIndicator.SetActive(true);
+        }
 
         switch (DataManager.Instance.BonusCannons)
         {
@@ -41,26 +50,51 @@ public class ShipUpgrades : MonoBehaviour
         }
     }
 
-    public void BonusCannons()
+    public void BonusCannons() // bonus cannons cost 10 obols
     {
-        DataManager.Instance.BonusCannons++;
+        if(DataManager.Instance.TotalObols >= 10)
+        {
+            if (DataManager.Instance.BonusCannons == 0)
+            {
+                DataManager.Instance.BonusCannons = 1;
+                bonusCannon1.SetActive(true);
+                DataManager.Instance.TotalObols -= 10;
+            }
+            else if (DataManager.Instance.BonusCannons == 1)
+            {
+                DataManager.Instance.BonusCannons = 2;
+                bonusCannon1.SetActive(true);
+                bonusCannon2.SetActive(true);
+                DataManager.Instance.TotalObols -= 10;
+            }
+        }
     }
 
     public void BiggerBalls()
-    { 
-        cannonballs.biggerBalls = true;
-        cannonType.splitShot = false;
-        DataManager.Instance.BigBalls = true;
-        DataManager.Instance.EngorgeBalls();
-        DataManager.Instance.SaveGame();
+    {   
+        if(DataManager.Instance.TotalObols >= 10)
+        {
+            cannonballs.biggerBalls = true;
+            cannonType.splitShot = false;
+            DataManager.Instance.BigBalls = true;
+            bigBallIndicator.SetActive(true);
+            splitShotIndicator.SetActive(false);
+            DataManager.Instance.EngorgeBalls();
+            DataManager.Instance.SaveGame();
+        }
     }
 
     public void SplitShots()
     {
-        cannonType.splitShot = true;
-        cannonballs.biggerBalls = false;
-        DataManager.Instance.SplitShot = true;
-        DataManager.Instance.SplitShots();
-        DataManager.Instance.SaveGame();
+        if (DataManager.Instance.TotalObols >= 10)
+        {
+            cannonType.splitShot = true;
+            cannonballs.biggerBalls = false;
+            bigBallIndicator.SetActive(false);
+            splitShotIndicator.SetActive(true);
+            DataManager.Instance.SplitShot = true;
+            DataManager.Instance.SplitShots();
+            DataManager.Instance.SaveGame();
+        }
     }
 }

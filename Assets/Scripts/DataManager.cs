@@ -39,7 +39,7 @@ public class DataManager : MonoBehaviour
     public float MaxSpeed { get; set; } = 2f; // ditto above, max speed
 
     public bool CerberusUnlocked { get; set; } // whether or not the player unlocked cerberus
-    public int BonusCannons { get; set; } // tracks the number of extra cannons the player has unlocked
+    public int BonusCannons { get; set; } = 0; // tracks the number of extra cannons the player has unlocked
     public bool BigBalls { get; set; } // tracks the 'Big Balls' cannon upgrade
     public bool SplitShot { get; set; } // tracks the 'Split Shot' cannon upgrade
 
